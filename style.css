@@ -160,6 +160,49 @@ button.link {
   .dot::before { display: none; }
 }
 
+/* ==================== Scroll reveal ==================== */
+/* Section content settles into place as it scrolls into view: a fade, a
+   small rise, and a slight scale-up from 0.97 to 1, so it reads as focusing
+   into place rather than just sliding. The .js-reveal class is only added
+   by script.js when the visitor has not asked for reduced motion, so with
+   reduced motion (or no JS) every element below is simply visible at rest,
+   no exceptions. */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(16px) scale(0.97);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.js-reveal .reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* The two flagship status panels (JERSA ERP, PawCare Pro) get a more
+   deliberate reveal that echoes the hero boot language: the panel's frame
+   resolves first (an inset border sweeping in from the top-left corner),
+   then its own content fades in a beat later. */
+.svc-panel { position: relative; }
+.js-reveal .reveal--panel::after {
+  content: "";
+  position: absolute; inset: 0;
+  border: 1px solid var(--screen-line);
+  border-radius: var(--radius);
+  clip-path: inset(0 100% 100% 0);
+  transition: clip-path 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+  pointer-events: none;
+}
+.js-reveal .reveal--panel.is-revealed::after {
+  clip-path: inset(0 0 0 0);
+}
+.js-reveal .reveal--panel > * {
+  opacity: 0;
+  transition: opacity 0.35s ease 0.18s;
+}
+.js-reveal .reveal--panel.is-revealed > * {
+  opacity: 1;
+}
+
 /* ==================== Status ribbon (sticky top nav) ==================== */
 .ribbon {
   position: sticky; top: 0; z-index: 100;
@@ -234,7 +277,20 @@ button.link {
 .section-intro a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ==================== Opening / hero ==================== */
-.opening { padding-top: clamp(44px, 7vw, 76px); padding-bottom: clamp(52px, 9vw, 84px); }
+.opening {
+  padding-top: clamp(44px, 7vw, 76px); padding-bottom: clamp(52px, 9vw, 84px);
+  position: relative; overflow: hidden;
+}
+/* The infrastructure-map canvas sits behind everything in the hero. It is
+   purely decorative (aria-hidden) and never intercepts clicks, so the real
+   content above it keeps working exactly as before. */
+.opening-canvas {
+  position: absolute; inset: 0;
+  z-index: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+.opening > .wrap { position: relative; z-index: 1; }
 /* The hero statement runs longer than a punchy headline, so it is set a step
    down from the global h1 size: strong, but it does not swallow the viewport. */
 .opening h1 {
