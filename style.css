@@ -222,11 +222,20 @@ button.link {
 
 .nav-toggle {
   display: none;
-  width: 40px; height: 40px; padding: 0;
+  width: 44px; height: 44px; padding: 0;
   background: transparent; border: 1px solid var(--near-black-line); border-radius: var(--radius-sm);
   cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  transition: background-color 0.15s ease;
 }
-.nav-toggle span { display: block; width: 16px; height: 2px; background: var(--cream-text); }
+.nav-toggle span {
+  display: block; width: 16px; height: 2px; background: var(--cream-text);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+/* The hamburger resolves into an X when the menu is open, driven by the
+   same aria-expanded state script.js already sets, no new JS needed. */
+.nav-toggle[aria-expanded="true"] { background: var(--near-black-line); }
+.nav-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
 
 /* ==================== Buttons ==================== */
 .btn {
@@ -739,13 +748,21 @@ body.modal-open { overflow: hidden; }
     position: absolute; top: 100%; left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 0;
     background: var(--near-black); border-bottom: 1px solid var(--near-black-line);
-    padding: 6px;
-    transform: translateY(-8px); opacity: 0; pointer-events: none;
-    transition: opacity 0.15s ease, transform 0.15s ease;
+    border-radius: 0 0 var(--radius) var(--radius);
+    overflow: hidden;
+    padding: 8px;
+    box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.45);
+    transform: translateY(-6px); opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
   }
   .ribbon-nav.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-  .ribbon-nav a { padding: 12px 10px; border-bottom: 1px solid var(--near-black-line); }
+  .ribbon-nav a {
+    padding: 15px 14px; border-radius: var(--radius-sm);
+    border-bottom: 1px solid var(--near-black-line);
+    transition: background-color 0.12s ease, color 0.15s ease;
+  }
   .ribbon-nav a:last-child { border-bottom: 0; }
+  .ribbon-nav a:active { background: var(--near-black-line); }
   .ribbon-nav a.is-active { border-bottom-color: var(--near-black-line); color: var(--gold-bright); }
   .nav-toggle { display: flex; }
   .ribbon-cta { display: none; }
@@ -761,14 +778,14 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 620px) {
   .svc-table-row {
     display: block;
-    padding: 16px 12px;
+    padding: 18px 14px;
   }
   .svc-table-row.svc-table-head { display: none; }
-  .svc-table-row .st-name { margin-bottom: 10px; }
+  .svc-table-row .st-name { margin-bottom: 12px; }
   .svc-table-row > span:not(.st-name) {
     display: block;
     font-size: 0.8rem;
-    margin-top: 3px;
+    margin-top: 7px;
   }
   .svc-table-row .st-view { text-align: left; }
   .svc-table-row .st-type::before   { content: "type    "; color: var(--ink-dim); }
@@ -780,7 +797,7 @@ body.modal-open { overflow: hidden; }
      full-width bars: same specificity as the block-display rule above
      (span + class), so being declared after it is what wins the tie. */
   .svc-table-row > span.st-type,
-  .svc-table-row > span.st-status { display: inline-flex; margin-top: 4px; }
+  .svc-table-row > span.st-status { display: inline-flex; margin-top: 6px; }
   /* Flexbox trims the trailing spaces baked into the ::before label
      strings above at the flex-item boundary (each pseudo-element becomes
      its own flex item once the parent is inline-flex), which collapsed
@@ -790,4 +807,46 @@ body.modal-open { overflow: hidden; }
   .svc-table-row > span.st-type::before,
   .svc-table-row > span.st-status::before { margin-right: 4px; }
   button.svc-table-row:hover { background: transparent; }
+
+  /* The JERSA ERP mockup is a vector diagram with real text baked into its
+     viewBox at fixed units: scaled down to a phone-width card, that text
+     shrinks to a few pixels and stops being legible. Rather than force
+     that, it keeps a real, readable minimum width and scrolls
+     horizontally, the same pattern already used for the code excerpt
+     below it. The real PawCare Pro screenshot doesn't get this treatment,
+     a photo just scales like a photo and stays fine. */
+  .svc-shot { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; }
+  .svc-shot-mock { min-width: 640px; }
+}
+
+/* Tap targets: expands the clickable area of small supplementary marks
+   (the tech logos/monogram fallback, sized for visual consistency with
+   text, not touch) via a transparent pseudo-element rather than padding,
+   so the visible icon size never changes. Gated on pointer:coarse rather
+   than a width breakpoint, since touch capability, not viewport width, is
+   what actually matters here. */
+@media (pointer: coarse) {
+  .tech-logo::before, .tech-chip::before {
+    content: ""; position: absolute; inset: -9px;
+  }
+  .svc-links a, .svc-links button.link { display: inline-block; padding: 5px 0; }
+}
+
+/* Mobile-specific spacing and type scale: not just the desktop clamp
+   floors compressed further, real mobile values. Section padding in
+   particular had a 56px/36px floor that barely responded to vw below
+   tablet width, so on a 320-480px phone it read as too much of the
+   screen spent on empty padding rather than content. */
+@media (max-width: 480px) {
+  :root {
+    --section-py:         clamp(40px, 11vw, 56px);
+    --section-py-compact: clamp(28px, 8vw, 36px);
+  }
+  h1 { font-size: clamp(1.85rem, 8.6vw, 2.4rem); }
+  .section-head { margin-bottom: 28px; }
+  .opening-stats { gap: 16px 20px; margin-bottom: 28px; padding-top: 22px; }
+  /* "Withholding tax" plus its peso value is too wide for a single row at
+     this width and was wrapping mid-value; a clean two-line stack reads
+     better than a squeezed inline wrap. */
+  .calc-row { flex-direction: column; align-items: flex-start; gap: 2px; }
 }
