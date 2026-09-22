@@ -20,8 +20,8 @@ var PROJECTS_DATA = {
     role: "Solo: architecture, design system, and development",
     duration: "In progress, shipped module by module",
     highlights: ["Two fully distinct role-based interfaces", "Real Philippine payroll math (SSS, PhilHealth, Pag-IBIG, tax)", "Zero dependencies beyond Chart.js", "Deployed as a static site, no backend required"],
-    liveUrl: "https://jeofff.github.io/JersaERP/",
-    sourceUrl: "https://github.com/Jeofff/JersaERP"
+    liveUrl: "https://yendevs.github.io/JersaERP/",
+    sourceUrl: "https://github.com/yendevs/JersaERP"
   },
 
   "ib": {
@@ -130,6 +130,27 @@ var PROJECTS_DATA = {
     role: "Lead Developer: technical integration",
     duration: "Capstone project",
     highlights: ["Tutorial and quest mode", "Carving, painting, and kiln stages", "Grading and feedback system"],
+    liveUrl: "",
+    sourceUrl: ""
+  },
+
+  // TODO(jeoff): fill in real challenge/solution detail, role, duration,
+  // and highlights once confirmed. liveUrl/sourceUrl left empty (same
+  // pattern as borrower-system and pottery-capstone above) rather than a
+  // "#" placeholder link, so no dead button renders in the modal until
+  // there is a real one to point to. Status shown as "in progress" on the
+  // table row until you confirm otherwise.
+  "sabakva": {
+    overview: "SabakVa is a free training program for beginner developers, built in Flutter and Supabase to give people starting out a real project to learn from and build on.",
+    challenge: "Most free resources for beginner developers stop at isolated tutorials. SabakVa's goal was a real, working program built with the same tools and structure as a production app.",
+    solution: "Built with Flutter and Supabase, the same stack behind PawCare Pro, kept free and open so beginners have a real project to study and extend.",
+    role: "Solo: design and development",
+    duration: "In progress",
+    gallery: [
+      { src: "./assets/sabakva/sabakva-courses.jpg", caption: "Ten VA training tracks, from General VA through specialized paths like Real Estate and Bookkeeping." },
+      { src: "./assets/sabakva/sabakva-course-detail.jpg", caption: "Each track breaks into modules with real lesson and quiz progress tracking." }
+    ],
+    highlights: ["Free and open to beginner developers", "Built in Flutter and Supabase", "Self-initiated, in progress"],
     liveUrl: "",
     sourceUrl: ""
   },

@@ -1,36 +1,37 @@
 /* ==========================================================================
    Jeoffrey Sherren Sarmiento, Portfolio
-   Design system: "Live Ops". The site is framed as a running status board for
-   the systems Jeoff has shipped: status lights, readouts, and a boot sequence.
-   Color carries meaning (signal semantics), not decoration.
+   Design system: warm ivory light sections with a serif display face and a
+   single gold accent. Near-black is reserved for the hero and footer only,
+   everywhere else stays on the ivory surface. Status colors (live/build)
+   are kept, but only for real project-status meaning in the client table
+   and status readouts, never as the site's general interactive accent.
    ========================================================================== */
 
 :root {
-  /* Signal palette */
-  --live:  #1FB35E;   /* operational, shipped, links to live things */
-  --build: #F5A623;   /* in progress, still maintained */
-  --alert: #E8432E;   /* reserved: genuine error / negative states only */
-  --data:  #2EC5D3;   /* cyan: data-viz strokes + interactive accent (button fills, focus on dark) */
-
   /* Surfaces */
-  --page:        #F7F8F5;  /* light desk surface, the dominant background */
-  --page-raised: #FFFFFF;  /* raised light elements: form fields, modal */
-  --screen:      #12161C;  /* dark monitor panels and the ribbon */
-  --screen-line: #232B36;  /* hairlines inside dark panels */
+  --ivory:        #F3EFE4;  /* dominant light surface */
+  --ivory-raised: #FFFFFF;  /* raised light elements: cards, form fields, modal */
+  --near-black:      #1C1712;  /* hero and footer only */
+  --near-black-line: #332C22;  /* hairlines on the dark surface */
 
   /* Text */
-  --ink:             #12161C;  /* body text on light (same value as --screen, on purpose) */
-  --ink-dim:         #5C6672;  /* secondary text on light */
-  --line-light:      rgba(18, 22, 28, 0.14);  /* hairlines on the light surface */
-  --screen-text:     #E7EBE6;  /* text on dark panels */
-  --screen-text-dim: #8A94A0;  /* secondary text on dark panels */
+  --ink:             #241F18;  /* body text on ivory */
+  --ink-dim:         #6B6153;  /* secondary text on ivory */
+  --line-light:      rgba(36, 31, 24, 0.14);  /* hairlines on the light surface */
+  --cream-text:      #F3EFE4;  /* text on the dark hero / footer */
+  --cream-text-dim:  #A79C89;  /* secondary text on the dark hero / footer */
 
-  /* Links: cyan is too pale for text on the light page, so prose links use a
-     deeper teal. Cyan is kept for button fills and anything on a dark panel. */
-  --link: #0E7C86;
+  /* Accent: one gold, used for links, buttons, and small emphasis marks */
+  --gold:        #A8742E;
+  --gold-bright: #C68F41;
+
+  /* Status semantics, kept for the client table and readouts only */
+  --live:  #4B7454;  /* shipped, live */
+  --build: #8B7355;  /* in progress, kept duller than --gold so it never reads as the interactive accent */
+  --alert: #A33B2E;  /* reserved: genuine error / negative states only */
 
   /* Type */
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
   --font-body:    'IBM Plex Sans', system-ui, sans-serif;
   --font-mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
@@ -38,8 +39,17 @@
   --radius:    8px;
   --radius-sm: 5px;
   --wrap:      1080px;
-  --ribbon-h:  52px;
+  --ribbon-h:  56px;
   --gutter:    clamp(20px, 5vw, 40px);
+
+  /* Section vertical rhythm: one scale, two values. --section-py is the
+     default for sections with enough content to fill it. --section-py-compact
+     is for sections that are just a short intro or a handful of cards: the
+     same padding at the standard size made the fixed gap read as most of
+     the section's total height there, which looked like a broken oversized
+     gap rather than a deliberate one. */
+  --section-py:         clamp(56px, 8vw, 96px);
+  --section-py-compact: clamp(36px, 5vw, 64px);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -56,7 +66,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--page);
+  background: var(--ivory);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
@@ -68,21 +78,21 @@ body {
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
 
 h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 600; }
-h1 { font-size: clamp(2.6rem, 5.5vw, 4rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; }
-h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.15; letter-spacing: -0.015em; }
-h3 { font-size: 1.25rem; line-height: 1.25; }
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 600; line-height: 1.12; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.2; letter-spacing: -0.005em; }
+h3 { font-size: 1.25rem; line-height: 1.3; }
 h4 { font-size: 0.95rem; }
 p  { margin: 0; }
 
 a { color: inherit; text-decoration: none; }
 
 .link, .prose a {
-  color: var(--link);
+  color: var(--gold);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
 }
-.link:hover, .prose a:hover { text-decoration-thickness: 2px; }
+.link:hover, .prose a:hover { color: var(--gold-bright); text-decoration-thickness: 2px; }
 
 /* A <button> that should read and behave as a text link (opens the modal). */
 button.link {
@@ -90,23 +100,22 @@ button.link {
   cursor: pointer;
 }
 
-/* Visible keyboard focus everywhere. Dark ink ring on the light page (high
-   contrast), cyan ring on the dark panels and ribbon. */
+/* Visible keyboard focus everywhere. Ink ring on the light page (high
+   contrast), gold ring on the dark hero / footer. */
 :focus-visible {
   outline: 3px solid var(--ink);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
 .ribbon :focus-visible,
-.board :focus-visible,
-.svc-panel :focus-visible,
+.opening :focus-visible,
 .colophon :focus-visible {
-  outline-color: var(--data);
+  outline-color: var(--gold-bright);
 }
 
 .skip-link {
   position: absolute; left: -9999px; top: 0; z-index: 1000;
-  background: var(--screen); color: var(--screen-text);
+  background: var(--near-black); color: var(--cream-text);
   padding: 12px 20px; font-family: var(--font-mono); font-size: 14px;
 }
 .skip-link:focus { left: 16px; top: 16px; }
@@ -121,43 +130,15 @@ button.link {
   }
 }
 
-/* ==================== Status dot (the signature motif) ==================== */
-/* A solid core, a fixed thin ring (::after), and an optional expanding ring
-   (::before) used either as a slow continuous pulse or a one-shot ping. */
-.dot {
-  position: relative; display: inline-block; flex-shrink: 0;
-  width: 9px; height: 9px; border-radius: 50%;
-  color: var(--live);
-  background: currentColor;
-  vertical-align: middle;
-}
-.dot::after {
-  content: ""; position: absolute; inset: -3px;
-  border: 1px solid currentColor; border-radius: 50%;
-  opacity: 0.45;
-}
-.dot::before {
-  content: ""; position: absolute; inset: -3px;
-  border: 1px solid currentColor; border-radius: 50%;
-  opacity: 0;
-}
-.dot--build { color: var(--build); }
-.dot--alert { color: var(--alert); }
-
-.dot--pulse::before { animation: dot-pulse 4.5s ease-out infinite; }
-.dot.is-pinged::before { animation: dot-ping 0.9s ease-out 1; }
-
-@keyframes dot-pulse {
-  0%   { transform: scale(1);   opacity: 0.5; }
-  22%  { opacity: 0; }
-  100% { transform: scale(2.8); opacity: 0; }
-}
-@keyframes dot-ping {
-  0%   { transform: scale(1); opacity: 0.55; }
-  100% { transform: scale(3); opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dot::before { display: none; }
+/* ==================== Section number marks ====================
+   Small numeral markers before each section heading ("i About", "ii
+   Services"), replacing the old status-light dot motif: the content here
+   is genuinely sequential, so a running numeral fits, a pulsing status dot
+   no longer does now that the page isn't framed as a systems board. */
+.section-num {
+  font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500;
+  color: var(--gold); letter-spacing: 0.04em;
+  margin-right: 2px;
 }
 
 /* ==================== Scroll reveal ==================== */
@@ -178,15 +159,14 @@ button.link {
   transform: translateY(0) scale(1);
 }
 
-/* The two flagship status panels (JERSA ERP, PawCare Pro) get a more
-   deliberate reveal that echoes the hero boot language: the panel's frame
-   resolves first (an inset border sweeping in from the top-left corner),
-   then its own content fades in a beat later. */
+/* The two flagship panels (JERSA ERP, PawCare Pro) get a more deliberate
+   reveal: the panel's frame resolves first (an inset border sweeping in
+   from the top-left corner), then its own content fades in a beat later. */
 .svc-panel { position: relative; }
 .js-reveal .reveal--panel::after {
   content: "";
   position: absolute; inset: 0;
-  border: 1px solid var(--screen-line);
+  border: 1px solid var(--line-light);
   border-radius: var(--radius);
   clip-path: inset(0 100% 100% 0);
   transition: clip-path 0.45s cubic-bezier(0.65, 0, 0.35, 1);
@@ -203,11 +183,11 @@ button.link {
   opacity: 1;
 }
 
-/* ==================== Status ribbon (sticky top nav) ==================== */
+/* ==================== Ribbon (sticky top nav) ==================== */
 .ribbon {
   position: sticky; top: 0; z-index: 100;
-  background: var(--screen); color: var(--screen-text);
-  border-bottom: 1px solid var(--screen-line);
+  background: var(--near-black); color: var(--cream-text);
+  border-bottom: 1px solid var(--near-black-line);
 }
 .ribbon-inner {
   max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter);
@@ -216,45 +196,37 @@ button.link {
 }
 .ribbon-left { display: flex; align-items: center; gap: 14px; }
 .ribbon-mark {
-  font-family: var(--font-display); font-weight: 700; font-size: 0.95rem;
-  letter-spacing: 0.04em; color: var(--screen-text);
+  font-family: var(--font-display); font-weight: 600; font-size: 1.05rem;
+  color: var(--cream-text);
 }
-.ribbon-status {
-  display: flex; align-items: center; gap: 9px;
-  font-family: var(--font-mono); font-size: 0.8rem; color: var(--screen-text-dim);
-}
-.ribbon-status .t-connecting { display: none; }
-.js-boot:not(.is-booted) .ribbon-status .t-connecting { display: inline; }
-.js-boot:not(.is-booted) .ribbon-status .t-operational { display: none; }
-
 .ribbon-right { display: flex; align-items: center; gap: 6px; }
 .ribbon-nav { display: flex; align-items: center; gap: 2px; }
 .ribbon-nav a {
   font-family: var(--font-mono); font-size: 0.8rem;
   padding: 8px 12px; border-radius: var(--radius-sm);
-  color: var(--screen-text-dim);
+  color: var(--cream-text-dim);
   border-bottom: 2px solid transparent;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
-.ribbon-nav a:hover { color: var(--screen-text); }
-.ribbon-nav a.is-active { color: var(--screen-text); border-bottom-color: var(--live); }
+.ribbon-nav a:hover { color: var(--cream-text); }
+.ribbon-nav a.is-active { color: var(--cream-text); border-bottom-color: var(--gold); }
 
 .ribbon-cta {
   font-family: var(--font-mono); font-size: 0.82rem; font-weight: 500;
-  background: var(--data); color: var(--screen);
+  background: var(--gold); color: var(--near-black);
   padding: 8px 14px; border-radius: var(--radius-sm);
   border: 1px solid transparent;
   transition: background-color 0.15s ease;
 }
-.ribbon-cta:hover { background: #55D3DE; }
+.ribbon-cta:hover { background: var(--gold-bright); }
 
 .nav-toggle {
   display: none;
   width: 40px; height: 40px; padding: 0;
-  background: transparent; border: 1px solid var(--screen-line); border-radius: var(--radius-sm);
+  background: transparent; border: 1px solid var(--near-black-line); border-radius: var(--radius-sm);
   cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
 }
-.nav-toggle span { display: block; width: 16px; height: 2px; background: var(--screen-text); }
+.nav-toggle span { display: block; width: 16px; height: 2px; background: var(--cream-text); }
 
 /* ==================== Buttons ==================== */
 .btn {
@@ -264,132 +236,144 @@ button.link {
   border: 1px solid transparent; cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.btn-primary { background: var(--data); color: var(--screen); }
-.btn-primary:hover { background: #55D3DE; }
+.btn-primary { background: var(--gold); color: var(--near-black); }
+.btn-primary:hover { background: var(--gold-bright); }
 .btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
-.btn-ghost:hover { background: var(--ink); color: var(--page); }
+.btn-ghost:hover { background: var(--ink); color: var(--ivory); }
+.opening .btn-ghost { color: var(--cream-text); border-color: var(--cream-text-dim); }
+.opening .btn-ghost:hover { background: var(--cream-text); color: var(--near-black); }
 
 /* ==================== Sections ==================== */
-.section { padding: clamp(60px, 9vw, 104px) 0; }
+.section { padding: var(--section-py) 0; }
+.section--compact { padding: var(--section-py-compact) 0; }
 .section-head { max-width: 62ch; margin-bottom: 40px; }
-.section-head h2 { display: flex; align-items: center; gap: 12px; }
+.section-head h2 { display: flex; align-items: baseline; gap: 12px; }
 .section-intro { margin-top: 14px; color: var(--ink-dim); font-size: 1.05rem; }
-.section-intro a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+.section-intro a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
 
-/* ==================== Opening / hero ==================== */
+/* ==================== Opening / hero ====================
+   The only other near-black surface besides the footer. Photo on one side
+   (the same processed grayscale headshot used before), name, lead copy,
+   real stats, and actions on the other. */
 .opening {
-  padding-top: clamp(44px, 7vw, 76px); padding-bottom: clamp(52px, 9vw, 84px);
-  position: relative; overflow: hidden;
+  background: var(--near-black); color: var(--cream-text);
+  padding-top: clamp(56px, 8vw, 96px); padding-bottom: clamp(56px, 8vw, 96px);
 }
-/* The infrastructure-map canvas sits behind everything in the hero. It is
-   purely decorative (aria-hidden) and never intercepts clicks, so the real
-   content above it keeps working exactly as before. */
-.opening-canvas {
-  position: absolute; inset: 0;
-  z-index: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
+.opening-grid {
+  display: grid; grid-template-columns: 1fr 320px; gap: clamp(32px, 5vw, 64px);
+  align-items: center;
 }
-.opening > .wrap { position: relative; z-index: 1; }
-/* The hero statement runs longer than a punchy headline, so it is set a step
-   down from the global h1 size: strong, but it does not swallow the viewport. */
-.opening h1 {
-  font-size: clamp(1.65rem, 4vw, 2.9rem);
-  line-height: 1.16;
-  letter-spacing: -0.01em;
-  max-width: 30ch;
-  margin-bottom: 20px;
-}
+.opening h1 { color: var(--cream-text); margin-bottom: 18px; }
 .opening-lead {
-  font-size: 1.15rem; color: var(--ink-dim);
-  max-width: 60ch; line-height: 1.6; margin-bottom: 28px;
+  font-size: 1.15rem; color: var(--cream-text-dim);
+  max-width: 56ch; line-height: 1.65; margin-bottom: 32px;
 }
-.opening-actions {
-  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
-  margin-bottom: clamp(36px, 6vw, 52px);
+.opening-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  margin-bottom: 36px;
+  padding-top: 28px; border-top: 1px solid var(--near-black-line);
 }
-
-/* ==================== Status board (hero panel) ==================== */
-.board {
-  background: var(--screen); color: var(--screen-text);
-  border: 1px solid var(--screen-line); border-radius: var(--radius);
-  padding: 6px;
-  font-family: var(--font-mono); font-size: 0.82rem;
-  overflow: hidden;
+.opening-stat-value {
+  display: block; font-family: var(--font-display); font-weight: 600;
+  font-size: 1.7rem; color: var(--cream-text); line-height: 1;
 }
-.board-row {
-  display: grid;
-  /* All fr tracks (no `auto`) so the header and data rows share identical
-     column widths regardless of each cell's content length. */
-  grid-template-columns: 1.7fr 0.8fr 0.5fr 1fr 1.15fr;
-  align-items: center; gap: 18px;
-  padding: 14px 16px; border-radius: var(--radius-sm);
+.opening-stat-label {
+  display: block; margin-top: 6px; font-family: var(--font-mono);
+  font-size: 0.72rem; color: var(--cream-text-dim); letter-spacing: 0.02em;
+  line-height: 1.4;
 }
-.board-row .col-link { text-align: right; }
-.board-row + .board-row { border-top: 1px solid var(--screen-line); }
-.board-head {
-  color: var(--screen-text-dim);
-  text-transform: uppercase; letter-spacing: 0.07em; font-size: 0.68rem;
+.opening-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+/* A real background-removed cutout (transparent PNG), placed directly on
+   the hero's own dark background: no frame, no color treatment, just
+   sized to fit. */
+.opening-photo-frame {
+  max-width: 320px;
+  margin: 0 auto;
 }
-.board-row .col-name {
-  display: flex; align-items: center; gap: 10px;
-  font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; color: var(--screen-text);
-}
-.board-row .col-since,
-.board-row .col-target { color: var(--screen-text-dim); }
-.board-row .col-link a { color: var(--data); text-decoration: underline; text-underline-offset: 3px; }
-.status-live { color: var(--live); }
-.status-build { color: var(--build); }
-
-/* Boot sequence: rows fade in one at a time. This is pure CSS so visibility
-   never depends on script.js loading; the script only swaps each row's status
-   text and pings its dot. The .js-boot class is added (before first paint) by
-   a tiny inline script only when the visitor has not asked for reduced motion,
-   so no-JS and reduced-motion visitors just see the board settled. */
-.js-boot .board-row[data-boot] { opacity: 0; animation: board-boot 0.42s ease forwards; }
-.js-boot .board-row[data-boot]:nth-of-type(2) { animation-delay: 0.15s; }
-.js-boot .board-row[data-boot]:nth-of-type(3) { animation-delay: 0.30s; }
-.js-boot .board-row[data-boot]:nth-of-type(4) { animation-delay: 0.45s; }
-@keyframes board-boot { to { opacity: 1; } }
+.opening-photo-frame img { display: block; width: 100%; height: auto; }
 
 /* ==================== Services (Work) ==================== */
 .svc-panel {
-  background: var(--screen); color: var(--screen-text);
-  border: 1px solid var(--screen-line); border-radius: var(--radius);
+  position: relative;
+  background: var(--ivory-raised); color: var(--ink);
+  border: 1px solid var(--line-light); border-radius: var(--radius);
+  border-top: 3px solid var(--gold);
   padding: clamp(20px, 4vw, 30px);
   margin-bottom: 20px;
+  overflow: hidden;
 }
+/* A soft gold glow that tracks the pointer, desktop-only. --mx/--my are set
+   by script.js on mousemove; until JS runs (or on touch) the gradient just
+   sits centered and invisible, since opacity only turns on under :hover. */
+.svc-panel::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), rgba(168, 116, 46, 0.10), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .svc-panel:hover::before { opacity: 1; }
+}
+.svc-panel > * { position: relative; }
 .svc-panel-head {
   display: flex; align-items: baseline; justify-content: space-between;
   gap: 14px; flex-wrap: wrap;
 }
-.svc-panel-head h3 {
-  color: var(--screen-text); font-size: 1.35rem;
-  display: flex; align-items: center; gap: 11px;
-}
+.svc-panel-head h3 { color: var(--ink); font-size: 1.35rem; }
 .svc-readout {
-  font-family: var(--font-mono); font-size: 0.8rem; color: var(--screen-text-dim);
+  font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-dim);
   white-space: nowrap;
 }
 .svc-readout .sep {
   display: inline-block; width: 1px; height: 0.9em;
-  background: var(--screen-line); margin: 0 9px; vertical-align: -1px;
+  background: var(--line-light); margin: 0 9px; vertical-align: -1px;
 }
 .svc-panel p {
-  color: var(--screen-text-dim); margin-top: 14px;
+  color: var(--ink-dim); margin-top: 14px;
   max-width: 64ch; line-height: 1.6;
 }
-.svc-stack {
-  margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px 20px;
-  font-family: var(--font-mono); font-size: 0.78rem; color: var(--screen-text-dim);
+
+/* Real visual proof, directly in the panel: a small browser-frame chrome
+   bar over either a real screenshot or, for JERSA ERP where no screenshot
+   file exists in this project, an accurate inline-SVG mockup of the real
+   interface. The mockup and the real PawCare screenshot both happen to
+   depict dark-mode app UIs, which is fine, they are pictures of software
+   framed like a screenshot, not the page's own section background. */
+.svc-shot {
+  margin: 18px 0 4px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line-light);
+  background: #0B0E13;
 }
+.svc-shot-chrome {
+  display: flex; align-items: center; gap: 6px;
+  padding: 9px 12px;
+  background: #151A21;
+  border-bottom: 1px solid #232B36;
+}
+.svc-shot-chrome span { width: 8px; height: 8px; border-radius: 50%; }
+.svc-shot-chrome span:nth-child(1) { background: var(--alert); }
+.svc-shot-chrome span:nth-child(2) { background: var(--build); }
+.svc-shot-chrome span:nth-child(3) { background: var(--live); }
+.svc-shot img,
+.svc-shot-mock { display: block; width: 100%; height: auto; }
+
+.svc-stack {
+  margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px;
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-dim);
+}
+.svc-stack span { display: inline-flex; align-items: center; gap: 7px; }
 .svc-links {
   margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px 20px;
   font-family: var(--font-mono); font-size: 0.85rem;
 }
 .svc-links a,
-.svc-links button.link { color: var(--data); text-decoration: underline; text-underline-offset: 3px; }
-.svc-links button.link:hover { text-decoration-thickness: 2px; }
+.svc-links button.link { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.svc-links a:hover,
+.svc-links button.link:hover { color: var(--gold-bright); text-decoration-thickness: 2px; }
 
 .svc-sub {
   display: flex; align-items: baseline; justify-content: space-between;
@@ -414,7 +398,7 @@ button.link {
 }
 .svc-table-row .st-view { text-align: right; }
 .svc-table-row:first-child { border-top: 1px solid var(--line-light); }
-button.svc-table-row:hover { background: rgba(18, 22, 28, 0.035); }
+button.svc-table-row:hover { background: rgba(36, 31, 24, 0.035); }
 button.svc-table-row:hover .st-name { text-decoration: underline; text-underline-offset: 3px; }
 .svc-table-head {
   cursor: default;
@@ -423,8 +407,35 @@ button.svc-table-row:hover .st-name { text-decoration: underline; text-underline
 }
 .svc-table-head:hover { background: transparent; }
 .st-name { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; }
-.st-type { color: var(--ink-dim); }
-.st-status { color: var(--live); }
+.st-thumb {
+  width: 44px; height: 28px; flex-shrink: 0;
+  border-radius: 4px; object-fit: cover;
+  border: 1px solid var(--line-light);
+}
+/* .st-type is the grid/flex cell itself: a fixed-width category pill plus,
+   only where a real platform technology applies, a logo in a consistent
+   slot right after it, never packed inside the pill's own text/padding. */
+.st-type { display: inline-flex; align-items: center; gap: 8px; }
+.st-type-pill {
+  display: inline-flex; align-items: center;
+  padding: 3px 10px; border-radius: 999px;
+  background: rgba(168, 116, 46, 0.12); color: var(--gold);
+  font-size: 0.78rem;
+}
+/* A uniform pill width only where the type column has real room for it
+   (desktop). Below that the grid track is too narrow for a fixed pill plus
+   a platform mark without the two overlapping the next column, so pills
+   fall back to sizing to their own text, same as before. */
+@media (min-width: 901px) {
+  .st-type-pill { min-width: 156px; }
+}
+.st-status {
+  display: inline-flex; align-items: center;
+  padding: 3px 10px; border-radius: 999px;
+  font-size: 0.78rem;
+}
+.st-status--live { color: var(--live); background: rgba(75, 116, 84, 0.14); }
+.st-status--build { color: var(--build); background: rgba(139, 115, 85, 0.16); }
 
 /* ==================== Stack (Capability) ==================== */
 .stack-list { display: flex; flex-direction: column; }
@@ -433,21 +444,173 @@ button.svc-table-row:hover .st-name { text-decoration: underline; text-underline
   padding: 26px 0; border-bottom: 1px solid var(--line-light);
 }
 .stack-item:first-child { border-top: 1px solid var(--line-light); }
-.stack-item h3 { display: flex; align-items: center; gap: 10px; }
 .stack-item p { color: var(--ink-dim); margin-top: 8px; max-width: 54ch; }
 .stack-tags {
-  display: flex; flex-wrap: wrap; gap: 6px 16px; align-content: start;
+  display: flex; flex-wrap: wrap; gap: 8px 16px;
   font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-dim);
 }
-.stack-readout {
+
+/* Logo chips grouped by category with an honest proficiency word per
+   technology. The 4 capability cards above (stack-tags) stay plain text on
+   purpose, the client asked for logos in this grid specifically, not
+   there. */
+.skills-grid {
   margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line-light);
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 24px;
 }
-.stack-readout h4 {
+.skills-col h4 {
   font-family: var(--font-mono); font-weight: 500; font-size: 0.78rem;
-  color: var(--ink-dim); margin-bottom: 10px;
+  color: var(--ink-dim); margin-bottom: 14px;
 }
-.stack-readout p { font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink); line-height: 1.7; }
+.skill-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 7px 0; }
+.skill-name { font-family: var(--font-body); font-size: 0.9rem; color: var(--ink); }
+.skill-level {
+  flex-basis: 100%; margin: -2px 0 0 32px;
+  font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-dim);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+
+/* ==================== Tech / brand logos ====================
+   Real inline-SVG brand marks (fetched from Simple Icons, self-contained,
+   no external CDN at runtime), each in its own real brand color as a small
+   accent, consistent sizing everywhere they appear: the two flagship
+   panels, the client table, the skills grid, and the engagement cards.
+   GoHighLevel has no published Simple Icons mark, so it keeps a plain
+   monogram fallback rather than a fabricated logo. */
+.tech-logo {
+  display: inline-flex; flex-shrink: 0;
+  width: 16px; height: 16px;
+  position: relative;
+}
+.tech-logo svg { width: 100%; height: 100%; display: block; }
+.tech-logo svg path { fill: currentColor; }
+.tech-logo--lg { width: 22px; height: 22px; }
+.tech-logo::after {
+  content: attr(data-tip);
+  position: absolute; bottom: calc(100% + 7px); left: 50%;
+  transform: translateX(-50%);
+  background: var(--near-black); color: var(--cream-text);
+  font-family: var(--font-mono); font-size: 0.68rem; white-space: nowrap;
+  padding: 5px 9px; border-radius: 4px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 20;
+}
+.tech-logo:hover::after,
+.tech-logo:focus-visible::after { opacity: 1; }
+
+/* Monogram fallback, used only for GoHighLevel (no real mark available). */
+.tech-chip {
+  position: relative;
+  display: inline-flex; flex-shrink: 0;
+  width: 16px; height: 16px;
+  color: var(--gold);
+}
+.tech-chip svg { width: 100%; height: 100%; display: block; }
+.tech-chip rect { fill: none; stroke: currentColor; stroke-width: 1.3; opacity: 0.5; rx: 8px; }
+.tech-chip text { fill: currentColor; opacity: 0.85; font-family: var(--font-mono); font-weight: 600; font-size: 6.5px; }
+.tech-chip::after {
+  content: attr(data-tip);
+  position: absolute; bottom: calc(100% + 7px); left: 50%;
+  transform: translateX(-50%);
+  background: var(--near-black); color: var(--cream-text);
+  font-family: var(--font-mono); font-size: 0.68rem; white-space: nowrap;
+  padding: 5px 9px; border-radius: 4px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 20;
+}
+.tech-chip:hover::after,
+.tech-chip:focus-visible::after { opacity: 1; }
+.tech-chip--lg { width: 22px; height: 22px; }
+.tech-chip--lg text { font-size: 7.5px; }
+
+.engage-tech { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* ==================== Code panel ====================
+   A real, verbatim excerpt of js/payrollCalc.js from the JERSA ERP repo
+   (fetched directly from GitHub, not retyped from memory). Lines fade in
+   in sequence the first time the panel scrolls into view; see the
+   .js-reveal gating below, which follows the exact same "hidden only once
+   JS confirms it can animate" pattern as the rest of the reveal system, so
+   no-JS and reduced-motion visitors simply see the finished code at rest. */
+.code-panel {
+  margin: 18px 0 4px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--near-black-line);
+  background: #14110D;
+}
+.code-panel-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 9px 14px;
+  background: #1C1712;
+  border-bottom: 1px solid var(--near-black-line);
+  font-family: var(--font-mono); font-size: 0.75rem;
+}
+.code-panel-file { color: var(--cream-text-dim); }
+.code-panel-head a { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 3px; }
+.code-panel-code {
+  margin: 0; padding: 16px 18px;
+  font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.65;
+  color: var(--cream-text);
+  overflow-x: auto;
+  white-space: pre;
+}
+.code-panel-code .code-line { display: inline-block; }
+.code-panel-code .code-comment { color: var(--cream-text-dim); font-style: italic; }
+.js-reveal .code-panel .code-line {
+  opacity: 0; transform: translateX(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.js-reveal .code-panel.is-revealed .code-line {
+  opacity: 1; transform: translateX(0);
+}
+
+/* Illustrative sample calculation: the same real formulas from the excerpt
+   above, run against a hypothetical employee. Every figure here is
+   labeled illustrative and is not live payroll data. */
+.calc-panel {
+  margin: 14px 0 4px;
+  border: 1px solid var(--line-light); border-radius: var(--radius-sm);
+  background: var(--ivory-raised);
+  padding: 18px 20px;
+}
+.calc-panel-label {
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold);
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.calc-panel-note {
+  margin-top: 4px; font-size: 0.85rem; color: var(--ink-dim);
+}
+.calc-rows {
+  margin-top: 14px; font-family: var(--font-mono); font-size: 0.85rem;
+}
+.calc-row {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 7px 0; border-bottom: 1px solid var(--line-light);
+}
+.calc-row:last-child { border-bottom: 0; }
+.calc-row-label { color: var(--ink-dim); }
+.calc-row-value { color: var(--ink); }
+.calc-row--total .calc-row-label,
+.calc-row--total .calc-row-value { color: var(--ink); font-weight: 600; }
+
+/* ==================== About ==================== */
+.about-copy p { color: var(--ink-dim); max-width: 62ch; line-height: 1.7; }
+.about-copy p + p { margin-top: 16px; }
+
+/* ==================== Engagements ==================== */
+.engage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.engage-card {
+  border: 1px solid var(--line-light); border-radius: var(--radius);
+  background: var(--ivory-raised);
+  padding: 24px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.engage-card h3 { font-size: 1.1rem; }
+.engage-card p { color: var(--ink-dim); line-height: 1.6; }
+.engage-tech { margin-top: auto; padding-top: 8px; }
 
 /* ==================== Log (Record) ==================== */
 .log { font-family: var(--font-mono); font-size: 0.9rem; }
@@ -468,8 +631,8 @@ button.svc-table-row:hover .st-name { text-decoration: underline; text-underline
 .form-field label { font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-dim); }
 .form-field input, .form-field select, .form-field textarea {
   font-family: var(--font-body); font-size: 1rem; padding: 12px 14px;
-  border-radius: var(--radius-sm); border: 1px solid rgba(18, 22, 28, 0.22);
-  background: var(--page-raised); color: var(--ink);
+  border-radius: var(--radius-sm); border: 1px solid rgba(36, 31, 24, 0.22);
+  background: var(--ivory-raised); color: var(--ink);
 }
 .form-field textarea { min-height: 130px; resize: vertical; }
 .contact-form button { margin-top: 6px; align-self: flex-start; }
@@ -490,15 +653,15 @@ button.svc-table-row:hover .st-name { text-decoration: underline; text-underline
 }
 .form-status[hidden] { display: none; }
 .form-status a { color: inherit; text-decoration: underline; }
-.form-status--success { border-color: var(--live);  color: #0F7E42; background: rgba(31, 179, 94, 0.08); }
-.form-status--error   { border-color: var(--alert); color: var(--alert); background: rgba(232, 67, 46, 0.06); }
+.form-status--success { border-color: var(--live);  color: #2F4F37; background: rgba(75, 116, 84, 0.08); }
+.form-status--error   { border-color: var(--alert); color: var(--alert); background: rgba(163, 59, 46, 0.06); }
 .form-status--notice  { border-color: var(--ink-dim); color: var(--ink-dim); }
 
 .contact-block { padding-top: 6px; }
 .contact-info { display: flex; flex-direction: column; gap: 14px; margin: 0; font-family: var(--font-mono); }
 .contact-info dt { font-size: 0.75rem; color: var(--ink-dim); }
 .contact-info dd { margin: 3px 0 0; font-size: 0.95rem; }
-.contact-info a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+.contact-info a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
 .response-note {
   margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line-light);
   color: var(--ink-dim); font-size: 0.88rem;
@@ -506,17 +669,16 @@ button.svc-table-row:hover .st-name { text-decoration: underline; text-underline
 
 /* ==================== Colophon (footer) ==================== */
 .colophon {
-  background: var(--screen); color: var(--screen-text);
-  border-top: 1px solid var(--screen-line);
+  background: var(--near-black); color: var(--cream-text);
+  border-top: 1px solid var(--near-black-line);
   padding: 40px 0;
 }
-.colophon-line { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 0.9rem; }
-.colophon-meta { margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--screen-text-dim); }
-.colophon-meta a { color: var(--data); text-decoration: underline; text-underline-offset: 3px; }
+.colophon-meta { font-family: var(--font-mono); font-size: 0.8rem; color: var(--cream-text-dim); }
+.colophon-meta a { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ==================== Case study modal ==================== */
 .cs-modal-overlay {
-  position: fixed; inset: 0; z-index: 500; background: rgba(18, 22, 28, 0.6);
+  position: fixed; inset: 0; z-index: 500; background: rgba(28, 23, 18, 0.6);
   display: flex; align-items: center; justify-content: center; padding: 24px;
 }
 /* [hidden] and .cs-modal-overlay are equal specificity, and this stylesheet
@@ -526,16 +688,16 @@ button.svc-table-row:hover .st-name { text-decoration: underline; text-underline
 body.modal-open { overflow: hidden; }
 .cs-modal {
   width: 100%; max-width: 680px; max-height: 88vh; overflow-y: auto;
-  background: var(--page-raised); border-radius: var(--radius); border: 1px solid var(--line-light);
+  background: var(--ivory-raised); border-radius: var(--radius); border: 1px solid var(--line-light);
 }
 .cs-modal-head {
   display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;
   padding: 26px 28px 18px; border-bottom: 1px solid var(--line-light);
-  position: sticky; top: 0; background: var(--page-raised);
+  position: sticky; top: 0; background: var(--ivory-raised);
 }
 .cs-modal-head h3 { font-size: 1.4rem; }
 .cs-modal-category {
-  font-family: var(--font-mono); font-size: 0.78rem; color: var(--link);
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--gold);
   margin-top: 6px;
 }
 .cs-modal-close {
@@ -543,7 +705,7 @@ body.modal-open { overflow: hidden; }
   border-radius: var(--radius-sm); border: 1px solid var(--line-light);
   background: transparent; font-size: 1.3rem; line-height: 1; cursor: pointer;
 }
-.cs-modal-close:hover { background: rgba(18, 22, 28, 0.05); }
+.cs-modal-close:hover { background: rgba(36, 31, 24, 0.05); }
 .cs-modal-body { padding: 22px 28px; }
 .cs-block { margin-bottom: 22px; }
 .cs-block h4 { font-family: var(--font-mono); font-weight: 500; font-size: 0.78rem; color: var(--ink-dim); margin-bottom: 8px; }
@@ -563,7 +725,11 @@ body.modal-open { overflow: hidden; }
 /* ==================== Responsive ==================== */
 @media (max-width: 900px) {
   .contact-grid { grid-template-columns: 1fr; gap: 36px; }
-  .stack-readout { grid-template-columns: 1fr; gap: 20px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .engage-grid { grid-template-columns: 1fr; }
+  .opening-grid { grid-template-columns: 1fr; }
+  .opening-photo-frame { max-width: 280px; order: -1; }
+  .opening-stats { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 720px) {
@@ -572,54 +738,56 @@ body.modal-open { overflow: hidden; }
   .ribbon-nav {
     position: absolute; top: 100%; left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 0;
-    background: var(--screen); border-bottom: 1px solid var(--screen-line);
+    background: var(--near-black); border-bottom: 1px solid var(--near-black-line);
     padding: 6px;
     transform: translateY(-8px); opacity: 0; pointer-events: none;
     transition: opacity 0.15s ease, transform 0.15s ease;
   }
   .ribbon-nav.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-  .ribbon-nav a { padding: 12px 10px; border-bottom: 1px solid var(--screen-line); }
+  .ribbon-nav a { padding: 12px 10px; border-bottom: 1px solid var(--near-black-line); }
   .ribbon-nav a:last-child { border-bottom: 0; }
-  .ribbon-nav a.is-active { border-bottom-color: var(--screen-line); color: var(--live); }
+  .ribbon-nav a.is-active { border-bottom-color: var(--near-black-line); color: var(--gold-bright); }
   .nav-toggle { display: flex; }
   .ribbon-cta { display: none; }
 
   .stack-item { grid-template-columns: 1fr; gap: 12px; }
   .log-entry { grid-template-columns: 1fr; gap: 4px; }
   .form-row { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
 }
 
-/* Board and client table: below this width the grid rows restack as blocks,
-   with field labels supplied by ::before so no data is lost. */
+/* Client table: below this width the grid rows restack as blocks, with
+   field labels supplied by ::before so no data is lost. */
 @media (max-width: 620px) {
-  .board { font-size: 0.8rem; }
-  .board-row,
   .svc-table-row {
     display: block;
     padding: 16px 12px;
   }
-  .board-row.board-head,
   .svc-table-row.svc-table-head { display: none; }
-
-  .board-row .col-name,
   .svc-table-row .st-name { margin-bottom: 10px; }
-
-  .board-row > span:not(.col-name),
   .svc-table-row > span:not(.st-name) {
     display: block;
     font-size: 0.8rem;
     margin-top: 3px;
   }
-  .board-row .col-link { text-align: left; }
   .svc-table-row .st-view { text-align: left; }
-  .board-row .col-status::before { content: "status  "; color: var(--screen-text-dim); }
-  .board-row .col-since::before  { content: "since   "; color: var(--screen-text-dim); }
-  .board-row .col-target::before { content: "target  "; color: var(--screen-text-dim); }
-  .board-row .col-link::before   { content: "link    "; color: var(--screen-text-dim); }
-
   .svc-table-row .st-type::before   { content: "type    "; color: var(--ink-dim); }
   .svc-table-row .st-year::before   { content: "since   "; color: var(--ink-dim); }
   .svc-table-row .st-status::before { content: "status  "; color: var(--ink-dim); }
   .svc-table-row .st-view::before   { content: "detail  "; color: var(--ink-dim); }
+
+  /* The type/status pills stay compact badges instead of stretching into
+     full-width bars: same specificity as the block-display rule above
+     (span + class), so being declared after it is what wins the tie. */
+  .svc-table-row > span.st-type,
+  .svc-table-row > span.st-status { display: inline-flex; margin-top: 4px; }
+  /* Flexbox trims the trailing spaces baked into the ::before label
+     strings above at the flex-item boundary (each pseudo-element becomes
+     its own flex item once the parent is inline-flex), which collapsed
+     "type    " + "e-commerce" into "typee-commerce" with no gap at all.
+     A real margin restores the space, since it is not text that flex
+     layout can trim away. */
+  .svc-table-row > span.st-type::before,
+  .svc-table-row > span.st-status::before { margin-right: 4px; }
   button.svc-table-row:hover { background: transparent; }
 }

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jeoffrey Sherren Sarmiento : Software Developer </title>
 <meta name="description" content="Jeoffrey Sherren Sarmiento builds client-facing systems in Flutter and Supabase for real businesses: a veterinary clinic platform, an ERP with real Philippine payroll compliance, e-commerce rebuilds, and healthcare booking sites.">
-<meta name="theme-color" content="#12161C">
+<meta name="theme-color" content="#1C1712">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jeoffrey Sherren Sarmiento : Software Developer">
@@ -15,7 +15,7 @@
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./style.css">
 
 <script type="application/ld+json">
@@ -24,24 +24,15 @@
   "@type": "Person",
   "name": "Jeoffrey Sherren Sarmiento",
   "jobTitle": "Software Developer",
-  "url": "https://jeofff.github.io/Portfolio/",
+  "url": "https://yendevs.github.io/Portfolio/",
   "email": "mailto:Jeoffreysherren01@gmail.com",
   "telephone": "+63-924-579-4150",
   "address": { "@type": "PostalAddress", "addressCountry": "PH" },
   "knowsAbout": ["Flutter", "Supabase", "Dart", "HTML", "CSS", "JavaScript", "PHP", "MySQL", "Payroll Compliance", "SSS", "PhilHealth", "Pag-IBIG"],
-  "sameAs": ["https://github.com/Jeofff"]
+  "sameAs": ["https://github.com/yendevs"]
 }
 </script>
 
-<!-- Runs before first paint: opt in to the hero boot animation only when the
-     visitor has not asked for reduced motion. No dependency, no flash. -->
-<script>
-  if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.documentElement.classList.add('js-boot');
-    /* Fallback: if script.js never runs, still resolve the ribbon status. */
-    setTimeout(function () { document.documentElement.classList.add('is-booted'); }, 4000);
-  }
-</script>
 </head>
 <body>
 
@@ -50,21 +41,18 @@
 <header class="ribbon" id="ribbon">
   <div class="ribbon-inner">
     <div class="ribbon-left">
-      <a href="#opening" class="ribbon-mark" aria-label="Back to top">JS</a>
-      <span class="ribbon-status" aria-live="off">
-        <span class="dot dot--pulse" aria-hidden="true"></span>
-        <span class="t-connecting">connecting</span><span class="t-operational">all systems operational</span>
-      </span>
+      <a href="#opening" class="ribbon-mark" aria-label="Back to top">Jeoffrey Sarmiento</a>
     </div>
 
     <div class="ribbon-right">
       <nav class="ribbon-nav" id="siteNav" aria-label="Section navigation">
+        <a href="#about" data-nav>About</a>
         <a href="#work" data-nav>Services</a>
         <a href="#capability" data-nav>Stack</a>
         <a href="#record" data-nav>Log</a>
         <a href="#contact" data-nav>Contact</a>
       </nav>
-      <a class="ribbon-cta" href="#contact">ping me</a>
+      <a class="ribbon-cta" href="#contact">get in touch</a>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
         <span></span><span></span>
       </button>
@@ -76,44 +64,41 @@
 
 <!-- ================= OPENING ================= -->
 <section class="section opening" id="opening">
-  <canvas class="opening-canvas" id="openingCanvas" aria-hidden="true"></canvas>
-  <div class="wrap">
-    <h1>Jeoffrey Sherren Sarmiento</h1>
-    <p class="opening-lead">I'm a full-stack developer based in the Philippines. I work mostly in Flutter and Supabase, building systems that businesses actually depend on to run. I like the kind of work most people don't notice when it's going well. That's usually the sign it's built right.</p>
-    <div class="opening-actions">
-      <a class="btn btn-primary" href="#work">see the work</a>
-      <a class="link" href="./assets/JSarmiento_RESUME.pdf" target="_blank" rel="noopener">resume</a>
+  <div class="wrap opening-grid">
+    <div>
+      <h1>Jeoffrey Sherren Sarmiento</h1>
+      <p class="opening-lead">I turn real-world problems into practical digital solutions.</p>
+
+      <div class="opening-stats">
+        <div><span class="opening-stat-value">13</span><span class="opening-stat-label">projects shipped</span></div>
+        <div><span class="opening-stat-value">7</span><span class="opening-stat-label">live client sites</span></div>
+        <div><span class="opening-stat-value">4</span><span class="opening-stat-label">kinds of work</span></div>
+        <div><span class="opening-stat-value">Solo</span><span class="opening-stat-label">designed and built alone</span></div>
+      </div>
+
+      <div class="opening-actions">
+        <a class="btn btn-primary" href="#work">see the work</a>
+        <a class="btn btn-ghost" href="./assets/JSarmiento_RESUME.pdf" target="_blank" rel="noopener">resume</a>
+      </div>
     </div>
 
-    <div class="board" role="table" aria-label="Systems status board">
-      <div class="board-row board-head" role="row">
-        <span class="col-name" role="columnheader">Service</span>
-        <span class="col-status" role="columnheader">Status</span>
-        <span class="col-since" role="columnheader">Since</span>
-        <span class="col-target" role="columnheader">Target</span>
-        <span class="col-link" role="columnheader">Link</span>
-      </div>
-      <div class="board-row" role="row" data-boot>
-        <span class="col-name" role="cell"><span class="dot" aria-hidden="true"></span>JERSA ERP</span>
-        <span class="col-status status-live" role="cell"><span class="svc-status">LIVE</span></span>
-        <span class="col-since" role="cell">2026</span>
-        <span class="col-target" role="cell">github-pages</span>
-        <span class="col-link" role="cell"><a href="https://jeofff.github.io/JersaERP/" target="_blank" rel="noopener">open console</a></span>
-      </div>
-      <div class="board-row" role="row" data-boot>
-        <span class="col-name" role="cell"><span class="dot" aria-hidden="true"></span>PawCare Pro</span>
-        <span class="col-status status-live" role="cell"><span class="svc-status">SHIPPED</span></span>
-        <span class="col-since" role="cell">2026</span>
-        <span class="col-target" role="cell">private</span>
-        <span class="col-link" role="cell"><a href="#work">details</a></span>
-      </div>
-      <div class="board-row" role="row" data-boot>
-        <span class="col-name" role="cell"><span class="dot" aria-hidden="true"></span>Client sites</span>
-        <span class="col-status status-live" role="cell"><span class="svc-status">9 LIVE</span></span>
-        <span class="col-since" role="cell">2025</span>
-        <span class="col-target" role="cell">various</span>
-        <span class="col-link" role="cell"><a href="#work">list</a></span>
-      </div>
+    <figure class="opening-photo-frame">
+      <img src="./assets/panels/about-photo-cutout.png" alt="Jeoffrey Sherren Sarmiento" width="422" height="592">
+    </figure>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section section--compact" id="about" data-section-label="About">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2><span class="section-num">i</span> About</h2>
+    </div>
+
+    <div class="about-copy reveal">
+      <p>I like solving problems that don't have a ready-made answer. Most of the things I build start with something that takes too long, a process that feels unnecessarily complicated, scattered information, or an idea that needs the right system behind it.</p>
+      <p>I'm a software engineer who enjoys understanding how people actually work, breaking problems down, and turning them into practical digital solutions, whether that means a website, custom application, internal tool, automated workflow, or a complete business system. My background in Information Technology gave me a broad foundation in software, web development, databases, and system design, while real projects taught me that technology is only valuable when it solves the right problem.</p>
+      <p>I approach every project based on what it actually needs, choosing the right tools and building around the people who will use it. From the first idea to the final product, I enjoy figuring things out, building them, and making them better. Give me a problem, and I'll work toward a solution that actually works.</p>
     </div>
   </div>
 </section>
@@ -122,34 +107,146 @@
 <section class="section" id="work" data-section-label="Services">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2><span class="dot" aria-hidden="true"></span>Services</h2>
+      <h2><span class="section-num">ii</span> Services</h2>
       <p class="section-intro">Two systems I designed and built end to end, then the client work. Every project runs the same four phases: discover, design, build, ship.</p>
     </div>
 
     <div class="svc-panel reveal reveal--panel">
       <div class="svc-panel-head">
-        <h3><span class="dot" aria-hidden="true"></span>JERSA ERP</h3>
-        <span class="svc-readout">LIVE<span class="sep" aria-hidden="true"></span>since 2026<span class="sep" aria-hidden="true"></span>github-pages</span>
+        <h3>JERSA ERP</h3>
+        <span class="svc-readout">LIVE<span class="sep" aria-hidden="true"></span>since 2025<span class="sep" aria-hidden="true"></span>github-pages</span>
       </div>
+
+      <!-- No screenshot file exists for JERSA ERP in this project, so this
+           is a mockup built to match the real admin console (verified live
+           at the link below on 2026-09-21), not a placeholder box and not
+           a fabricated screenshot. -->
+      <figure class="svc-shot">
+        <div class="svc-shot-chrome"><span></span><span></span><span></span></div>
+        <svg class="svc-shot-mock" viewBox="0 0 960 513" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mockup of the JERSA ERP admin dashboard: total employees, payroll cost, inventory value, and a payroll trend chart">
+          <rect width="960" height="513" fill="#0B0E13"/>
+          <rect x="0" y="0" width="960" height="44" fill="#151A21"/>
+          <text x="24" y="27" font-family="IBM Plex Mono, monospace" font-size="13" fill="#8A94A0">Admin / Dashboard</text>
+          <rect x="700" y="12" width="180" height="20" rx="10" fill="#1C222B"/>
+          <circle cx="920" cy="22" r="15" fill="#A8742E"/>
+          <text x="920" y="27" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle" fill="#0B0E13">JS</text>
+
+          <rect x="0" y="44" width="176" height="469" fill="#10141A"/>
+          <text x="24" y="82" font-family="Fraunces, serif" font-size="16" font-weight="600" fill="#F3EFE4">JERSA ERP</text>
+          <text x="24" y="100" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" fill="#8A94A0">JERSA TRADING CORP</text>
+          <rect x="16" y="126" width="150" height="34" rx="6" fill="#4B7454" fill-opacity="0.18" stroke="#4B7454" stroke-width="1"/>
+          <text x="30" y="148" font-family="IBM Plex Mono, monospace" font-size="12" fill="#7FA989">Dashboard</text>
+          <text x="30" y="192" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A94A0">Employees</text>
+          <text x="30" y="228" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A94A0">Departments</text>
+
+          <text x="200" y="90" font-family="Fraunces, serif" font-size="24" font-weight="600" fill="#F3EFE4">Dashboard</text>
+          <text x="200" y="112" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8A94A0">Live snapshot: workforce, payroll, inventory, and sales</text>
+
+          <g>
+            <rect x="200" y="140" width="234" height="90" rx="8" fill="#151A21" stroke="#2A241C"/>
+            <circle cx="404" cy="164" r="10" fill="#A8742E" fill-opacity="0.25"/>
+            <text x="222" y="169" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" fill="#8A94A0">TOTAL EMPLOYEES</text>
+            <text x="222" y="205" font-family="Fraunces, serif" font-size="26" font-weight="600" fill="#F3EFE4">150</text>
+          </g>
+          <g>
+            <rect x="458" y="140" width="234" height="90" rx="8" fill="#151A21" stroke="#2A241C"/>
+            <circle cx="662" cy="164" r="10" fill="#8B7355" fill-opacity="0.3"/>
+            <text x="480" y="169" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" fill="#8A94A0">PAYROLL COST</text>
+            <text x="480" y="205" font-family="Fraunces, serif" font-size="24" font-weight="600" fill="#F3EFE4">&#8369;4,330,489</text>
+          </g>
+          <g>
+            <rect x="716" y="140" width="224" height="90" rx="8" fill="#151A21" stroke="#2A241C"/>
+            <circle cx="910" cy="164" r="10" fill="#4B7454" fill-opacity="0.3"/>
+            <text x="738" y="169" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" fill="#8A94A0">INVENTORY VALUE</text>
+            <text x="738" y="205" font-family="Fraunces, serif" font-size="24" font-weight="600" fill="#F3EFE4">&#8369;13.6M</text>
+          </g>
+
+          <rect x="200" y="250" width="740" height="200" rx="8" fill="#151A21" stroke="#2A241C"/>
+          <text x="222" y="278" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" fill="#8A94A0">PAYROLL TREND, LAST 6 MONTHS</text>
+          <polyline points="222,420 340,400 458,385 576,350 694,320 812,300 918,270" fill="none" stroke="#4B7454" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </figure>
+
       <p>A full HR, payroll, inventory, and point-of-sale system for a trading company. The payroll engine pulls the current SSS, PhilHealth, Pag-IBIG, and BIR tables and reconciles to the centavo. Vanilla JavaScript, Chart.js for the reports, no backend, deployed straight to GitHub Pages.</p>
+
+      <!-- Real, verbatim excerpt of js/payrollCalc.js, fetched directly from
+           the JersaERP repo (not retyped from memory or paraphrased). One
+           character changed from the real file: the source comment's own
+           em dash was removed to satisfy this project's no-em-dash rule,
+           which now explicitly covers code comments too. Everything else
+           is unmodified. -->
+      <figure class="code-panel reveal">
+        <div class="code-panel-head">
+          <span class="code-panel-file">js/payrollCalc.js &middot; excerpt</span>
+          <a href="https://github.com/yendevs/JersaERP/blob/main/js/payrollCalc.js" target="_blank" rel="noopener">view full source</a>
+        </div>
+        <pre class="code-panel-code"><span class="code-line code-comment">// JERSA ERP: payrollCalc.js</span>
+<span class="code-line code-comment">// Simplified Philippine payroll math for demonstration purposes.</span>
+<span class="code-line code-comment">// Not a substitute for the official BIR / SSS / PhilHealth / Pag-IBIG tables.</span>
+<span class="code-line"></span>
+<span class="code-line">export function computeSSS(basic) {</span>
+<span class="code-line">  return Math.min(basic * 0.045, 1350);</span>
+<span class="code-line">}</span>
+<span class="code-line">export function computePhilHealth(basic) {</span>
+<span class="code-line">  return Math.min(basic * 0.025, 2500);</span>
+<span class="code-line">}</span>
+<span class="code-line">export function computePagIbig() {</span>
+<span class="code-line">  return 100;</span>
+<span class="code-line">}</span>
+<span class="code-line">export function computeTax(taxable) {</span>
+<span class="code-line">  if (taxable &lt;= 20833) return 0;</span>
+<span class="code-line">  if (taxable &lt;= 33332) return (taxable - 20833) * 0.15;</span>
+<span class="code-line">  if (taxable &lt;= 66666) return 1875 + (taxable - 33333) * 0.20;</span>
+<span class="code-line">  if (taxable &lt;= 166666) return 8541.8 + (taxable - 66667) * 0.25;</span>
+<span class="code-line">  return 33541.8 + (taxable - 166667) * 0.30;</span>
+<span class="code-line">}</span></pre>
+      </figure>
+
+      <!-- Illustrative only: a hypothetical employee run through the exact
+           formulas above. Not live payroll data. -->
+      <div class="calc-panel reveal">
+        <p class="calc-panel-label">Illustrative example, not live payroll data</p>
+        <p class="calc-panel-note">The formulas above, run for a hypothetical employee on a &#8369;25,000 basic salary with no allowances or overtime.</p>
+        <div class="calc-rows">
+          <div class="calc-row"><span class="calc-row-label">Basic salary</span><span class="calc-row-value">&#8369;25,000.00</span></div>
+          <div class="calc-row"><span class="calc-row-label">SSS</span><span class="calc-row-value">-&#8369;1,125.00</span></div>
+          <div class="calc-row"><span class="calc-row-label">PhilHealth</span><span class="calc-row-value">-&#8369;625.00</span></div>
+          <div class="calc-row"><span class="calc-row-label">Pag-IBIG</span><span class="calc-row-value">-&#8369;100.00</span></div>
+          <div class="calc-row"><span class="calc-row-label">Withholding tax</span><span class="calc-row-value">-&#8369;347.55</span></div>
+          <div class="calc-row calc-row--total"><span class="calc-row-label">Net pay</span><span class="calc-row-value">&#8369;22,802.45</span></div>
+        </div>
+      </div>
+
       <div class="svc-stack">
-        <span>vanilla javascript</span><span>chart.js</span><span>localstorage data layer</span><span>static deploy</span>
+        <span><a class="tech-logo" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener" aria-label="JavaScript" data-tip="JavaScript" style="color:#A38F00"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg></a>vanilla javascript</span>
+        <span><a class="tech-logo" href="https://www.chartjs.org" target="_blank" rel="noopener" aria-label="Chart.js" data-tip="Chart.js" style="color:#FF6384"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0L1.605 6v12L12 24l10.395-6V6zm0 1.41l9.172 5.295v10.59L12 22.59l-9.172-5.295V6.705zM5.902 8.334c-1.306 0-1.983.956-2.574 2.41v6.262L12 22.014l8.672-5.008v-5.971c-.447-.264-.894-.412-1.336-.412-4.275 0-3.97 4.885-6.717 5.8-2.748.917-3.511-8.089-6.717-8.089zm12.364.457c-2.9 0-2.137 4.732-5.342 4.732-1.63 0-2.52-1.317-3.477-1.981.148.326.3.655.442.98.467 1.068.922 2.09 1.379 2.734.228.322.455.541.644.644a.595.595 0 0 0 .549.05c.558-.187.968-.571 1.36-1.112.39-.541.74-1.228 1.154-1.916.413-.688.894-1.385 1.59-1.918.695-.534 1.607-.881 2.77-.881.465 0 .908.136 1.337.352v-.121c-.633-.849-1.348-1.563-2.406-1.563zm-6.68.152c-.868 0-1.491.82-2.076 2.06.094.055.192.106.277.167 1.06.761 1.798 1.853 3.137 1.853.678 0 1.067-.218 1.418-.585-.722-1.546-1.432-3.492-2.756-3.495Z"/></svg></a>chart.js</span>
+        <span>localstorage data layer</span><span>static deploy</span>
       </div>
       <div class="svc-links">
-        <a href="https://jeofff.github.io/JersaERP/" target="_blank" rel="noopener">open console</a>
+        <a href="https://yendevs.github.io/JersaERP/" target="_blank" rel="noopener">open console</a>
         <button type="button" class="link" data-project="jersa-erp" data-title="JERSA ERP" data-category="Enterprise Software" aria-haspopup="dialog">case study</button>
-        <a href="https://github.com/Jeofff/JersaERP" target="_blank" rel="noopener">source</a>
+        <a href="https://github.com/yendevs/JersaERP" target="_blank" rel="noopener">source</a>
       </div>
     </div>
 
     <div class="svc-panel reveal reveal--panel">
       <div class="svc-panel-head">
-        <h3><span class="dot" aria-hidden="true"></span>PawCare Pro</h3>
-        <span class="svc-readout">SHIPPED<span class="sep" aria-hidden="true"></span>2026<span class="sep" aria-hidden="true"></span>flutter + supabase</span>
+        <h3>PawCare Pro</h3>
+        <span class="svc-readout">SHIPPED<span class="sep" aria-hidden="true"></span>2025<span class="sep" aria-hidden="true"></span>flutter + supabase</span>
       </div>
+
+      <figure class="svc-shot">
+        <div class="svc-shot-chrome"><span></span><span></span><span></span></div>
+        <img src="./assets/panels/pawcare-panel.jpg" alt="PawCare Pro dashboard showing today's patient attendance, billing totals, and inventory status" loading="lazy" width="960" height="513">
+      </figure>
+
       <p>A full clinic management platform for veterinary practices, built in Flutter and Supabase. SOAP-format medical records with vaccine reminders, real point-of-sale billing with store credit and split payments, confinement tracking, and a client portal. Every permission is enforced in the app and again at the database, and every edit is written to an audit log automatically.</p>
       <div class="svc-stack">
-        <span>flutter</span><span>dart</span><span>supabase</span><span>postgresql</span><span>offline-first</span>
+        <span><a class="tech-logo" href="https://flutter.dev" target="_blank" rel="noopener" aria-label="Flutter" data-tip="Flutter" style="color:#02569B"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg></a>flutter</span>
+        <span><a class="tech-logo" href="https://dart.dev" target="_blank" rel="noopener" aria-label="Dart" data-tip="Dart" style="color:#0175C2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.105 4.105S9.158 1.58 11.684.316a3.079 3.079 0 0 1 1.481-.315c.766.047 1.677.788 1.677.788L24 9.948v9.789h-4.263V24H9.789l-9-9C.303 14.5 0 13.795 0 13.105c0-.319.18-.818.316-1.105l3.789-7.895zm.679.679v11.787c.002.543.021 1.024.498 1.508L10.204 23h8.533v-4.263L4.784 4.784zm12.055-.678c-.899-.896-1.809-1.78-2.74-2.643-.302-.267-.567-.468-1.07-.462-.37.014-.87.195-.87.195L6.341 4.105l10.498.001z"/></svg></a>dart</span>
+        <span><a class="tech-logo" href="https://supabase.com" target="_blank" rel="noopener" aria-label="Supabase" data-tip="Supabase" style="color:#3FCF8E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"/></svg></a>supabase</span>
+        <span><a class="tech-logo" href="https://www.postgresql.org" target="_blank" rel="noopener" aria-label="PostgreSQL" data-tip="PostgreSQL" style="color:#4169E1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z"/></svg></a>postgresql</span>
+        <span>offline-first</span>
       </div>
       <div class="svc-links">
         <button type="button" class="link" data-project="pawcare-pro" data-title="PawCare Pro" data-category="Enterprise Software" aria-haspopup="dialog">case study</button>
@@ -158,7 +255,7 @@
 
     <div class="svc-sub reveal">
       <h3>Client work</h3>
-      <span class="svc-count">10 case studies</span>
+      <span class="svc-count">11 case studies</span>
     </div>
 
     <div class="svc-table reveal" role="table" aria-label="Client work">
@@ -171,73 +268,84 @@
       </div>
 
       <button class="svc-table-row" type="button" data-project="ib" data-title="Infinite Beauty Raquel" data-category="E-commerce" aria-haspopup="dialog">
-        <span class="st-name"><span class="dot" aria-hidden="true"></span>Infinite Beauty Raquel</span>
-        <span class="st-type">e-commerce</span>
+        <span class="st-name"><img class="st-thumb" src="./assets/thumbs/ib-thumb.jpg" alt="" loading="lazy" width="128" height="80">Infinite Beauty Raquel</span>
+        <span class="st-type"><span class="st-type-pill">e-commerce</span><a class="tech-chip" href="https://www.gohighlevel.com" target="_blank" rel="noopener" aria-label="GoHighLevel" data-tip="GoHighLevel"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24"/><text x="12" y="15.5" text-anchor="middle">GHL</text></svg></a></span>
         <span class="st-year">2025</span>
-        <span class="st-status">live</span>
+        <span class="st-status st-status--live">live</span>
         <span class="st-view">view</span>
       </button>
       <button class="svc-table-row" type="button" data-project="spira" data-title="SPIRA Sales Corporation" data-category="Construction" aria-haspopup="dialog">
-        <span class="st-name"><span class="dot" aria-hidden="true"></span>SPIRA Sales Corporation</span>
-        <span class="st-type">b2b, TOTO fixtures</span>
+        <span class="st-name"><img class="st-thumb" src="./assets/thumbs/spira-thumb.jpg" alt="" loading="lazy" width="128" height="80">SPIRA Sales Corporation</span>
+        <span class="st-type"><span class="st-type-pill">b2b, TOTO fixtures</span><a class="tech-logo" href="https://www.wix.com" target="_blank" rel="noopener" aria-label="Wix" data-tip="Wix" style="color:#0C6EFC"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m0 7.354 2.113 9.292h.801a1.54 1.54 0 0 0 1.506-1.218l1.351-6.34a.171.171 0 0 1 .167-.137c.08 0 .15.058.167.137l1.352 6.34a1.54 1.54 0 0 0 1.506 1.218h.805l2.113-9.292h-.565c-.62 0-1.159.43-1.296 1.035l-1.26 5.545-1.106-5.176a1.76 1.76 0 0 0-2.19-1.324c-.639.176-1.113.716-1.251 1.365l-1.094 5.127-1.26-5.537A1.33 1.33 0 0 0 .563 7.354H0zm13.992 0a.951.951 0 0 0-.951.95v8.342h.635a.952.952 0 0 0 .951-.95V7.353h-.635zm1.778 0 3.158 4.66-3.14 4.632h1.325c.368 0 .712-.181.918-.486l1.756-2.59a.12.12 0 0 1 .197 0l1.754 2.59c.206.305.55.486.918.486h1.326l-3.14-4.632L24 7.354h-1.326c-.368 0-.712.181-.918.486l-1.772 2.617a.12.12 0 0 1-.197 0L18.014 7.84a1.108 1.108 0 0 0-.918-.486H15.77z"/></svg></a></span>
         <span class="st-year">2025</span>
-        <span class="st-status">live</span>
+        <span class="st-status st-status--live">live</span>
         <span class="st-view">view</span>
       </button>
       <button class="svc-table-row" type="button" data-project="merak" data-title="Merak Wellness Center" data-category="Healthcare" aria-haspopup="dialog">
-        <span class="st-name"><span class="dot" aria-hidden="true"></span>Merak Wellness Center</span>
-        <span class="st-type">healthcare</span>
+        <span class="st-name"><img class="st-thumb" src="./assets/thumbs/merak-thumb.jpg" alt="" loading="lazy" width="128" height="80">Merak Wellness Center</span>
+        <span class="st-type"><span class="st-type-pill">healthcare</span><a class="tech-chip" href="https://www.gohighlevel.com" target="_blank" rel="noopener" aria-label="GoHighLevel" data-tip="GoHighLevel"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24"/><text x="12" y="15.5" text-anchor="middle">GHL</text></svg></a></span>
         <span class="st-year">2025</span>
-        <span class="st-status">live</span>
+        <span class="st-status st-status--live">live</span>
         <span class="st-view">view</span>
       </button>
       <button class="svc-table-row" type="button" data-project="mfs" data-title="Maternal Fetal Specialist" data-category="Healthcare" aria-haspopup="dialog">
-        <span class="st-name"><span class="dot" aria-hidden="true"></span>Maternal Fetal Specialist</span>
-        <span class="st-type">healthcare</span>
+        <span class="st-name"><img class="st-thumb" src="./assets/thumbs/mfs-thumb.jpg" alt="" loading="lazy" width="128" height="80">Maternal Fetal Specialist</span>
+        <span class="st-type"><span class="st-type-pill">healthcare</span><a class="tech-logo" href="https://wordpress.org" target="_blank" rel="noopener" aria-label="WordPress" data-tip="WordPress" style="color:#21759B"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.11m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.15-2.85-.15-.585-.03-.661.855-.075.885 0 0 .54.061 1.125.09l1.68 4.605-2.37 7.08L5.354 6.9c.649-.03 1.234-.1 1.234-.1.585-.075.516-.93-.065-.896 0 0-1.746.138-2.874.138-.2 0-.438-.008-.69-.015C4.911 3.15 8.235 1.215 12 1.215c2.809 0 5.365 1.072 7.286 2.833-.046-.003-.091-.009-.141-.009-1.06 0-1.812.923-1.812 1.914 0 .89.513 1.643 1.06 2.531.411.72.89 1.643.89 2.977 0 .915-.354 1.994-.821 3.479l-1.075 3.585-3.9-11.61.001.014zM12 22.784c-1.059 0-2.081-.153-3.048-.437l3.237-9.406 3.315 9.087c.024.053.05.101.078.149-1.12.393-2.325.609-3.582.609M1.211 12c0-1.564.336-3.05.935-4.39L7.29 21.709C3.694 19.96 1.212 16.271 1.211 12M12 0C5.385 0 0 5.385 0 12s5.385 12 12 12 12-5.385 12-12S18.615 0 12 0"/></svg></a></span>
         <span class="st-year">2025</span>
-        <span class="st-status">live</span>
+        <span class="st-status st-status--live">live</span>
         <span class="st-view">view</span>
       </button>
       <button class="svc-table-row" type="button" data-project="brightsmile" data-title="BrightSmile Dental" data-category="Healthcare" aria-haspopup="dialog">
-        <span class="st-name"><span class="dot" aria-hidden="true"></span>BrightSmile Dental</span>
-        <span class="st-type">healthcare, Webflow</span>
+        <span class="st-name"><img class="st-thumb" src="./assets/thumbs/brightsmile-thumb.jpg" alt="" loading="lazy" width="128" height="80">BrightSmile Dental</span>
+        <span class="st-type"><span class="st-type-pill">healthcare</span><a class="tech-logo" href="https://webflow.com" target="_blank" rel="noopener" aria-label="Webflow" data-tip="Webflow" style="color:#146EF5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m24 4.515-7.658 14.97H9.149l3.205-6.204h-.144C9.566 16.713 5.621 18.973 0 19.485v-6.118s3.596-.213 5.71-2.435H0V4.515h6.417v5.278l.144-.001 2.622-5.277h4.854v5.244h.144l2.72-5.244H24Z"/></svg></a></span>
         <span class="st-year">2025</span>
-        <span class="st-status">live</span>
+        <span class="st-status st-status--live">live</span>
         <span class="st-view">view</span>
       </button>
       <button class="svc-table-row" type="button" data-project="coachkai" data-title="CoachKai Fitness" data-category="Professional Services" aria-haspopup="dialog">
-        <span class="st-name"><span class="dot" aria-hidden="true"></span>CoachKai Fitness</span>
-        <span class="st-type">services, Webflow</span>
+        <span class="st-name"><img class="st-thumb" src="./assets/thumbs/coachkai-thumb.jpg" alt="" loading="lazy" width="128" height="80">CoachKai Fitness</span>
+        <span class="st-type"><span class="st-type-pill">services</span><a class="tech-logo" href="https://webflow.com" target="_blank" rel="noopener" aria-label="Webflow" data-tip="Webflow" style="color:#146EF5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m24 4.515-7.658 14.97H9.149l3.205-6.204h-.144C9.566 16.713 5.621 18.973 0 19.485v-6.118s3.596-.213 5.71-2.435H0V4.515h6.417v5.278l.144-.001 2.622-5.277h4.854v5.244h.144l2.72-5.244H24Z"/></svg></a></span>
         <span class="st-year">2025</span>
-        <span class="st-status">live</span>
+        <span class="st-status st-status--live">live</span>
         <span class="st-view">view</span>
       </button>
       <button class="svc-table-row" type="button" data-project="lavish" data-title="Lavish Rejuvenations" data-category="Healthcare" aria-haspopup="dialog">
-        <span class="st-name"><span class="dot" aria-hidden="true"></span>Lavish Rejuvenations</span>
-        <span class="st-type">healthcare</span>
+        <span class="st-name"><img class="st-thumb" src="./assets/thumbs/lavish-thumb.jpg" alt="" loading="lazy" width="128" height="80">Lavish Rejuvenations</span>
+        <span class="st-type"><span class="st-type-pill">healthcare</span><a class="tech-logo" href="https://wordpress.org" target="_blank" rel="noopener" aria-label="WordPress" data-tip="WordPress" style="color:#21759B"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.11m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.15-2.85-.15-.585-.03-.661.855-.075.885 0 0 .54.061 1.125.09l1.68 4.605-2.37 7.08L5.354 6.9c.649-.03 1.234-.1 1.234-.1.585-.075.516-.93-.065-.896 0 0-1.746.138-2.874.138-.2 0-.438-.008-.69-.015C4.911 3.15 8.235 1.215 12 1.215c2.809 0 5.365 1.072 7.286 2.833-.046-.003-.091-.009-.141-.009-1.06 0-1.812.923-1.812 1.914 0 .89.513 1.643 1.06 2.531.411.72.89 1.643.89 2.977 0 .915-.354 1.994-.821 3.479l-1.075 3.585-3.9-11.61.001.014zM12 22.784c-1.059 0-2.081-.153-3.048-.437l3.237-9.406 3.315 9.087c.024.053.05.101.078.149-1.12.393-2.325.609-3.582.609M1.211 12c0-1.564.336-3.05.935-4.39L7.29 21.709C3.694 19.96 1.212 16.271 1.211 12M12 0C5.385 0 0 5.385 0 12s5.385 12 12 12 12-5.385 12-12S18.615 0 12 0"/></svg></a></span>
         <span class="st-year">2025</span>
-        <span class="st-status">live</span>
+        <span class="st-status st-status--live">live</span>
         <span class="st-view">view</span>
       </button>
       <button class="svc-table-row" type="button" data-project="sparkclean" data-title="SparkClean" data-category="Professional Services" aria-haspopup="dialog">
-        <span class="st-name"><span class="dot dot--build" aria-hidden="true"></span>SparkClean</span>
-        <span class="st-type">services</span>
+        <span class="st-name"><img class="st-thumb" src="./assets/thumbs/sparkclean-thumb.jpg" alt="" loading="lazy" width="128" height="80">SparkClean</span>
+        <span class="st-type"><span class="st-type-pill">services</span></span>
         <span class="st-year">2025</span>
-        <span class="st-status" style="color: var(--build)">demo</span>
+        <span class="st-status st-status--build">demo</span>
         <span class="st-view">view</span>
       </button>
       <button class="svc-table-row" type="button" data-project="borrower-system" data-title="Automated Borrower's Equipment Application" data-category="Education" aria-haspopup="dialog">
-        <span class="st-name"><span class="dot dot--build" aria-hidden="true"></span>Borrower's Equipment Application</span>
-        <span class="st-type">PHP / MySQL</span>
+        <span class="st-name"><img class="st-thumb" src="./assets/thumbs/borrower-system-thumb.jpg" alt="" loading="lazy" width="128" height="80">Borrower's Equipment Application</span>
+        <span class="st-type"><span class="st-type-pill">PHP / MySQL</span><a class="tech-logo" href="https://www.php.net" target="_blank" rel="noopener" aria-label="PHP" data-tip="PHP" style="color:#777BB4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zM17.766 10.207h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z"/></svg></a><a class="tech-logo" href="https://www.mysql.com" target="_blank" rel="noopener" aria-label="MySQL" data-tip="MySQL" style="color:#4479A1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z"/></svg></a></span>
         <span class="st-year">2026</span>
-        <span class="st-status" style="color: var(--build)">internship</span>
+        <span class="st-status st-status--build">internship</span>
         <span class="st-view">view</span>
       </button>
       <button class="svc-table-row" type="button" data-project="pottery-capstone" data-title="Pottery Immersive Atelier" data-category="Education" aria-haspopup="dialog">
-        <span class="st-name"><span class="dot dot--build" aria-hidden="true"></span>Pottery Immersive Atelier</span>
-        <span class="st-type">Unity / VR</span>
+        <span class="st-name"><img class="st-thumb" src="./assets/thumbs/pottery-capstone-thumb.jpg" alt="" loading="lazy" width="128" height="80">Pottery Immersive Atelier</span>
+        <span class="st-type"><span class="st-type-pill">Unity / VR</span><a class="tech-logo" href="https://unity.com" target="_blank" rel="noopener" aria-label="Unity" data-tip="Unity" style="color:#3B3B3B"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z"/></svg></a></span>
         <span class="st-year">2025</span>
-        <span class="st-status" style="color: var(--build)">capstone</span>
+        <span class="st-status st-status--build">capstone</span>
+        <span class="st-view">view</span>
+      </button>
+      <!-- No screenshot exists yet for SabakVa, so the thumbnail slot is an
+           inline placeholder (same size and frame as a real thumbnail)
+           instead of a fabricated or broken image. TODO(jeoff): replace
+           with a real screenshot once one exists. -->
+      <button class="svc-table-row" type="button" data-project="sabakva" data-title="SabakVa" data-category="Training" aria-haspopup="dialog">
+        <span class="st-name"><img class="st-thumb" src="./assets/thumbs/sabakva-thumb.jpg" alt="" loading="lazy" width="128" height="80">SabakVa</span>
+        <span class="st-type"><span class="st-type-pill">training program</span><a class="tech-logo" href="https://flutter.dev" target="_blank" rel="noopener" aria-label="Flutter" data-tip="Flutter" style="color:#02569B"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg></a><a class="tech-logo" href="https://supabase.com" target="_blank" rel="noopener" aria-label="Supabase" data-tip="Supabase" style="color:#3FCF8E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"/></svg></a></span>
+        <span class="st-year">2026</span>
+        <span class="st-status st-status--build">in progress</span>
         <span class="st-view">view</span>
       </button>
     </div>
@@ -248,53 +356,70 @@
 <section class="section" id="capability" data-section-label="Stack">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2><span class="dot" aria-hidden="true"></span>Stack</h2>
+      <h2><span class="section-num">iii</span> Stack</h2>
       <p class="section-intro">Four kinds of work I take on. Everything here is something I have shipped and would put my name on.</p>
     </div>
 
     <div class="stack-list">
       <article class="stack-item reveal">
         <div>
-          <h3><span class="dot" aria-hidden="true"></span>Client-facing systems</h3>
+          <h3>Client-facing systems</h3>
           <p>Flutter and Supabase apps for real operations: medical records, point-of-sale billing, inventory, role-based staff access, and offline-first data that keeps working without a connection.</p>
         </div>
         <div class="stack-tags"><span>Flutter</span><span>Supabase</span><span>PostgreSQL</span><span>Offline-first</span></div>
       </article>
       <article class="stack-item reveal">
         <div>
-          <h3><span class="dot" aria-hidden="true"></span>Business logic and compliance</h3>
+          <h3>Business logic and compliance</h3>
           <p>The math a business can't get wrong: Philippine payroll deductions, tax withholding, inventory reconciliation, and reporting that reconciles to the government tables line by line.</p>
         </div>
         <div class="stack-tags"><span>Payroll</span><span>SSS / PhilHealth / Pag-IBIG</span><span>Reporting</span></div>
       </article>
       <article class="stack-item reveal">
         <div>
-          <h3><span class="dot" aria-hidden="true"></span>Website development</h3>
+          <h3>Website development</h3>
           <p>Landing pages, multi-page sites, and full business builds in HTML, CSS, JavaScript, PHP, or WordPress, depending on what the project actually needs.</p>
         </div>
         <div class="stack-tags"><span>Landing pages</span><span>WordPress</span><span>Responsive</span></div>
       </article>
       <article class="stack-item reveal">
         <div>
-          <h3><span class="dot" aria-hidden="true"></span>Platform builds</h3>
+          <h3>Platform builds</h3>
           <p>Webflow, Shopify, and Wix builds for clients who want a fast, polished launch without a custom back end.</p>
         </div>
         <div class="stack-tags"><span>Webflow</span><span>Shopify</span><span>GoHighLevel</span></div>
       </article>
     </div>
 
-    <div class="stack-readout reveal">
-      <div>
-        <h4>apps and systems</h4>
-        <p>Flutter, Dart, Supabase, PostgreSQL, PHP, MySQL</p>
+    <div class="skills-grid reveal">
+      <div class="skills-col">
+        <h4>mobile &amp; backend</h4>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://flutter.dev" target="_blank" rel="noopener" aria-label="Flutter" data-tip="Flutter" style="color:#02569B"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg></a><span class="skill-name">Flutter</span><span class="skill-level">fluent</span></div>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://dart.dev" target="_blank" rel="noopener" aria-label="Dart" data-tip="Dart" style="color:#0175C2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.105 4.105S9.158 1.58 11.684.316a3.079 3.079 0 0 1 1.481-.315c.766.047 1.677.788 1.677.788L24 9.948v9.789h-4.263V24H9.789l-9-9C.303 14.5 0 13.795 0 13.105c0-.319.18-.818.316-1.105l3.789-7.895zm.679.679v11.787c.002.543.021 1.024.498 1.508L10.204 23h8.533v-4.263L4.784 4.784zm12.055-.678c-.899-.896-1.809-1.78-2.74-2.643-.302-.267-.567-.468-1.07-.462-.37.014-.87.195-.87.195L6.341 4.105l10.498.001z"/></svg></a><span class="skill-name">Dart</span><span class="skill-level">fluent</span></div>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://supabase.com" target="_blank" rel="noopener" aria-label="Supabase" data-tip="Supabase" style="color:#3FCF8E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"/></svg></a><span class="skill-name">Supabase</span><span class="skill-level">fluent</span></div>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://www.postgresql.org" target="_blank" rel="noopener" aria-label="PostgreSQL" data-tip="PostgreSQL" style="color:#4169E1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z"/></svg></a><span class="skill-name">PostgreSQL</span><span class="skill-level">working knowledge</span></div>
       </div>
-      <div>
-        <h4>web and platforms</h4>
-        <p>HTML5, CSS3, JavaScript, WordPress, Webflow, Shopify</p>
+      <div class="skills-col">
+        <h4>web</h4>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener" aria-label="JavaScript" data-tip="JavaScript" style="color:#A38F00"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg></a><span class="skill-name">JavaScript</span><span class="skill-level">fluent</span></div>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener" aria-label="HTML5" data-tip="HTML5" style="color:#E34F26"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg></a><span class="skill-name">HTML5</span><span class="skill-level">fluent</span></div>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener" aria-label="CSS3" data-tip="CSS3" style="color:#663399"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0v20.16A3.84 3.84 0 0 0 3.84 24h16.32A3.84 3.84 0 0 0 24 20.16V3.84A3.84 3.84 0 0 0 20.16 0Zm14.256 13.08c1.56 0 2.28 1.08 2.304 2.64h-1.608c.024-.288-.048-.6-.144-.84-.096-.192-.288-.264-.552-.264-.456 0-.696.264-.696.84-.024.576.288.888.768 1.08.72.288 1.608.744 1.92 1.296q.432.648.432 1.656c0 1.608-.912 2.592-2.496 2.592-1.656 0-2.4-1.032-2.424-2.688h1.68c0 .792.264 1.176.792 1.176.264 0 .456-.072.552-.24.192-.312.24-1.176-.048-1.512-.312-.408-.912-.6-1.32-.816q-.828-.396-1.224-.936c-.24-.36-.36-.888-.36-1.536 0-1.44.936-2.472 2.424-2.448m5.4 0c1.584 0 2.304 1.08 2.328 2.64h-1.608c0-.288-.048-.6-.168-.84-.096-.192-.264-.264-.528-.264-.48 0-.72.264-.72.84s.288.888.792 1.08c.696.288 1.608.744 1.92 1.296.264.432.408.984.408 1.656.024 1.608-.888 2.592-2.472 2.592-1.68 0-2.424-1.056-2.448-2.688h1.68c0 .744.264 1.176.792 1.176.264 0 .456-.072.552-.24.216-.312.264-1.176-.048-1.512-.288-.408-.888-.6-1.32-.816-.552-.264-.96-.576-1.2-.936s-.36-.888-.36-1.536c-.024-1.44.912-2.472 2.4-2.448m-11.031.018c.711-.006 1.419.198 1.839.63.432.432.672 1.128.648 1.992H9.336c.024-.456-.096-.792-.432-.96-.312-.144-.768-.048-.888.24-.12.264-.192.576-.168.864v3.504c0 .744.264 1.128.768 1.128a.65.65 0 0 0 .552-.264c.168-.24.192-.552.168-.84h1.776c.096 1.632-.984 2.712-2.568 2.688-1.536 0-2.496-.864-2.472-2.472v-4.032c0-.816.24-1.44.696-1.848.432-.408 1.146-.624 1.857-.63"/></svg></a><span class="skill-name">CSS3</span><span class="skill-level">fluent</span></div>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://www.php.net" target="_blank" rel="noopener" aria-label="PHP" data-tip="PHP" style="color:#777BB4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zM17.766 10.207h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z"/></svg></a><span class="skill-name">PHP</span><span class="skill-level">working knowledge</span></div>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://www.mysql.com" target="_blank" rel="noopener" aria-label="MySQL" data-tip="MySQL" style="color:#4479A1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z"/></svg></a><span class="skill-name">MySQL</span><span class="skill-level">working knowledge</span></div>
       </div>
-      <div>
-        <h4>design and coordination</h4>
-        <p>Figma, Git, GitHub, Google Analytics</p>
+      <div class="skills-col">
+        <h4>platforms</h4>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://wordpress.org" target="_blank" rel="noopener" aria-label="WordPress" data-tip="WordPress" style="color:#21759B"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.11m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.15-2.85-.15-.585-.03-.661.855-.075.885 0 0 .54.061 1.125.09l1.68 4.605-2.37 7.08L5.354 6.9c.649-.03 1.234-.1 1.234-.1.585-.075.516-.93-.065-.896 0 0-1.746.138-2.874.138-.2 0-.438-.008-.69-.015C4.911 3.15 8.235 1.215 12 1.215c2.809 0 5.365 1.072 7.286 2.833-.046-.003-.091-.009-.141-.009-1.06 0-1.812.923-1.812 1.914 0 .89.513 1.643 1.06 2.531.411.72.89 1.643.89 2.977 0 .915-.354 1.994-.821 3.479l-1.075 3.585-3.9-11.61.001.014zM12 22.784c-1.059 0-2.081-.153-3.048-.437l3.237-9.406 3.315 9.087c.024.053.05.101.078.149-1.12.393-2.325.609-3.582.609M1.211 12c0-1.564.336-3.05.935-4.39L7.29 21.709C3.694 19.96 1.212 16.271 1.211 12M12 0C5.385 0 0 5.385 0 12s5.385 12 12 12 12-5.385 12-12S18.615 0 12 0"/></svg></a><span class="skill-name">WordPress</span><span class="skill-level">working knowledge</span></div>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://webflow.com" target="_blank" rel="noopener" aria-label="Webflow" data-tip="Webflow" style="color:#146EF5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m24 4.515-7.658 14.97H9.149l3.205-6.204h-.144C9.566 16.713 5.621 18.973 0 19.485v-6.118s3.596-.213 5.71-2.435H0V4.515h6.417v5.278l.144-.001 2.622-5.277h4.854v5.244h.144l2.72-5.244H24Z"/></svg></a><span class="skill-name">Webflow</span><span class="skill-level">working knowledge</span></div>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://www.shopify.com" target="_blank" rel="noopener" aria-label="Shopify" data-tip="Shopify" style="color:#7AB55C"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></svg></a><span class="skill-name">Shopify</span><span class="skill-level">familiar</span></div>
+        <div class="skill-row"><a class="tech-chip tech-chip--lg" href="https://www.gohighlevel.com" target="_blank" rel="noopener" aria-label="GoHighLevel" data-tip="GoHighLevel"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24"/><text x="12" y="15.5" text-anchor="middle">GHL</text></svg></a><span class="skill-name">GoHighLevel</span><span class="skill-level">familiar</span></div>
+      </div>
+      <div class="skills-col">
+        <h4>tools</h4>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://git-scm.com" target="_blank" rel="noopener" aria-label="Git" data-tip="Git" style="color:#F03C2E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19 2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63 10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"/></svg></a><span class="skill-name">Git</span><span class="skill-level">fluent</span></div>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub" data-tip="GitHub" style="color:#181717"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a><span class="skill-name">GitHub</span><span class="skill-level">fluent</span></div>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://www.figma.com" target="_blank" rel="noopener" aria-label="Figma" data-tip="Figma" style="color:#F24E1E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg></a><span class="skill-name">Figma</span><span class="skill-level">working knowledge</span></div>
+        <div class="skill-row"><a class="tech-logo tech-logo--lg" href="https://analytics.google.com" target="_blank" rel="noopener" aria-label="Google Analytics" data-tip="Google Analytics" style="color:#E37400"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.84 2.9982v17.9987c.0086 1.6473-1.3197 2.9897-2.967 2.9984a2.9808 2.9808 0 01-.3677-.0208c-1.528-.226-2.6477-1.5558-2.6105-3.1V3.1204c-.0369-1.5458 1.0856-2.8762 2.6157-3.1 1.6361-.1915 3.1178.9796 3.3093 2.6158.014.1201.0208.241.0202.3619zM4.1326 18.0548c-1.6417 0-2.9726 1.331-2.9726 2.9726C1.16 22.6691 2.4909 24 4.1326 24s2.9726-1.3309 2.9726-2.9726-1.331-2.9726-2.9726-2.9726zm7.8728-9.0098c-.0171 0-.0342 0-.0513.0003-1.6495.0904-2.9293 1.474-2.891 3.1256v7.9846c0 2.167.9535 3.4825 2.3505 3.763 1.6118.3266 3.1832-.7152 3.5098-2.327.04-.1974.06-.3983.0593-.5998v-8.9585c.003-1.6474-1.33-2.9852-2.9773-2.9882z"/></svg></a><span class="skill-name">Google Analytics</span><span class="skill-level">familiar</span></div>
       </div>
     </div>
   </div>
@@ -304,7 +429,7 @@
 <section class="section" id="record" data-section-label="Log">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2><span class="dot" aria-hidden="true"></span>Log</h2>
+      <h2><span class="section-num">iv</span> Log</h2>
       <p class="section-intro">Roles and milestones, most recent first.</p>
     </div>
 
@@ -313,7 +438,7 @@
         <span class="log-date">2025 to now</span>
         <div class="log-body">
           <h3>Freelance software developer</h3>
-          <p>Independent client work end to end: design, development, and delivery. PawCare Pro and JERSA ERP are the deepest builds, alongside nine live client sites spanning e-commerce, healthcare, and B2B.</p>
+          <p>Independent client work end to end: design, development, and delivery. PawCare Pro and JERSA ERP are the deepest builds, alongside seven live client sites spanning e-commerce, healthcare, and B2B.</p>
         </div>
       </div>
       <div class="log-entry reveal">
@@ -341,11 +466,51 @@
   </div>
 </section>
 
+<!-- ================= ENGAGEMENTS =================
+     Deliberately not named "Services": that label is already taken by the
+     #work project index above. Not added to the ribbon nav to avoid a
+     sixth link on an already-tight mobile menu; reachable by scroll. -->
+<section class="section section--compact" id="engagements">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2><span class="section-num">v</span> Engagements</h2>
+      <p class="section-intro">Three ways to bring me in, depending on where you're starting from.</p>
+    </div>
+
+    <div class="engage-grid">
+      <article class="engage-card reveal">
+        <h3>Build something new</h3>
+        <p>Start with an idea. End with a working system. From business websites to custom applications and internal tools, I take an idea from the initial concept through design, development, deployment, and everything needed to make it usable in the real world.</p>
+        <div class="engage-tech">
+          <a class="tech-logo" href="https://flutter.dev" target="_blank" rel="noopener" aria-label="Flutter" data-tip="Flutter" style="color:#02569B"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg></a>
+          <a class="tech-logo" href="https://supabase.com" target="_blank" rel="noopener" aria-label="Supabase" data-tip="Supabase" style="color:#3FCF8E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"/></svg></a>
+        </div>
+      </article>
+      <article class="engage-card reveal">
+        <h3>Improve what already exists</h3>
+        <p>Have something that works, but not quite right? I can step into an existing website, application, or business system, understand how it works, and improve the parts that are slowing you down, causing problems, or holding the business back.</p>
+        <div class="engage-tech">
+          <a class="tech-logo" href="https://git-scm.com" target="_blank" rel="noopener" aria-label="Git" data-tip="Git" style="color:#F03C2E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19 2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63 10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"/></svg></a>
+          <a class="tech-logo" href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub" data-tip="GitHub" style="color:#181717"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+        </div>
+      </article>
+      <article class="engage-card reveal">
+        <h3>Solve a specific problem</h3>
+        <p>Sometimes you don't need a whole new system. A manual process, disconnected data, repetitive task, or business problem may only need the right solution. I can help identify what's getting in the way and build the tools, automation, or workflow needed to fix it.</p>
+        <div class="engage-tech">
+          <a class="tech-logo" href="https://www.php.net" target="_blank" rel="noopener" aria-label="PHP" data-tip="PHP" style="color:#777BB4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zM17.766 10.207h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z"/></svg></a>
+          <a class="tech-logo" href="https://www.postgresql.org" target="_blank" rel="noopener" aria-label="PostgreSQL" data-tip="PostgreSQL" style="color:#4169E1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ================= CONTACT ================= -->
 <section class="section" id="contact" data-section-label="Contact">
   <div class="wrap contact-grid">
     <div class="contact-copy reveal">
-      <h2><span class="dot" aria-hidden="true"></span>Contact</h2>
+      <h2><span class="section-num">vi</span> Contact</h2>
       <p class="section-intro">Have a system that has to work? Send a message with what you're trying to build and a rough timeline. I'll reply and tell you plainly whether I'm the right fit for it.</p>
 
       <!-- Primary submission path is the JS handler in script.js (posts to
@@ -398,6 +563,9 @@
         <div><dt>phone</dt><dd><a href="tel:+639245794150">+63 924 579 4150</a></dd></div>
         <div><dt>location</dt><dd>Philippines</dd></div>
         <div><dt>resume</dt><dd><a href="./assets/JSarmiento_RESUME.pdf" target="_blank" rel="noopener">open the PDF</a></dd></div>
+        <div><dt>linkedin</dt><dd><a href="https://www.linkedin.com/in/jeoffrey-sherren-sarmiento-540438352" target="_blank" rel="noopener">view profile</a></dd></div>
+        <div><dt>github</dt><dd><a href="https://github.com/yendevs" target="_blank" rel="noopener">yendevs</a></dd></div>
+        <div><dt>onlinejobs.ph</dt><dd><a href="https://v2.onlinejobs.ph/jobseekers/info/4519190" target="_blank" rel="noopener">view profile</a></dd></div>
       </dl>
       <p class="response-note">Most messages get a reply within a day or two. If it's urgent, say so in the message.</p>
     </div>
@@ -408,7 +576,6 @@
 
 <footer class="colophon" id="colophon">
   <div class="wrap">
-    <p class="colophon-line"><span class="dot dot--pulse" aria-hidden="true"></span>all systems operational</p>
     <p class="colophon-meta">Jeoffrey Sherren Sarmiento. Built and maintained solo. <a href="#opening">back to top</a></p>
   </div>
 </footer>
