@@ -1005,7 +1005,7 @@ body.modal-open { overflow: hidden; }
 .cs-modal-head {
   position: sticky; top: 0; z-index: 2;
   display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;
-  padding: 24px clamp(18px, 4vw, 28px) 18px; background: rgba(22, 22, 22, 0.94); backdrop-filter: blur(10px);
+  padding: 24px clamp(18px, 4vw, 28px) 18px; background: var(--bg-raised-2);
   border-bottom: 1px solid var(--border);
 }
 .cs-modal-category { margin: 0 0 6px; font-family: var(--font-mono); font-size: 12px; color: var(--gold); }
@@ -1018,7 +1018,7 @@ body.modal-open { overflow: hidden; }
 .cs-modal-close:hover { border-color: var(--gold); }
 .cs-modal-body { padding: 24px clamp(18px, 4vw, 28px); display: flex; flex-direction: column; gap: 26px; }
 .cs-block h4 { margin: 0 0 8px; font-family: var(--font-mono); font-weight: 500; font-size: 12px; color: var(--text-dimmer); }
-.cs-block p { margin: 0; color: #E6E3DE; line-height: 1.7; font-size: 15.5px; }
+.cs-block p { margin: 0; color: var(--text); line-height: 1.7; font-size: 15.5px; }
 .cs-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 14px; }
 .cs-gallery-item { margin: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--bg); }
 .cs-gallery-item a { display: block; line-height: 0; }
@@ -1029,7 +1029,7 @@ body.modal-open { overflow: hidden; }
 .cs-meta-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-dimmer); }
 .cs-meta-row p { margin: 4px 0 0; font-size: 14px; color: var(--text); }
 .cs-highlights { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.cs-highlights li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.55; color: #E6E3DE; }
+.cs-highlights li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.55; color: var(--text); }
 .cs-highlights li::before { content: "→"; font-family: var(--font-mono); color: var(--gold); flex: none; }
 .cs-modal-actions { display: flex; gap: 10px; padding: 0 clamp(18px, 4vw, 28px) 28px; flex-wrap: wrap; }
 .cs-modal-actions a {
