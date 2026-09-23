@@ -126,7 +126,7 @@
      ============================================================ */
   (function panelGlow() {
     if (!hoverFine() || reduceMotion) return;
-    var glowPanels = document.querySelectorAll(".svc-panel, .client-card, .engage-card");
+    var glowPanels = document.querySelectorAll(".svc-panel, .client-card, .engage-card, .stack-card");
     Array.prototype.forEach.call(glowPanels, function (panel) {
       panel.addEventListener("mousemove", function (e) {
         var rect = panel.getBoundingClientRect();
